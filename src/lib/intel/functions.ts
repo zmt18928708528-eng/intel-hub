@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { collectAll } from "./collect.ts";
+import { bundledSnapshot } from "./snapshot.ts";
 import type { IntelBundle, TrackKind } from "./types.ts";
 
 const CACHE_MS = 60_000;
@@ -19,7 +20,16 @@ export const fetchIntel = createServerFn({ method: "GET" })
     if (!only && !force && cached && Date.now() - cached.at < CACHE_MS) {
       return cached.data;
     }
-    const bundle = await collectAll(only);
-    if (!only) cached = { at: Date.now(), data: bundle };
-    return bundle;
+    try {
+      const bundle = await collectAll(only);
+      if (!only) cached = { at: Date.now(), data: bundle };
+      return bundle;
+    } catch (err) {
+      const fallback = bundledSnapshot();
+      fallback.warnings = [
+        ...fallback.warnings,
+        `Live collect failed: ${(err as Error).message}`,
+      ];
+      return fallback;
+    }
   });

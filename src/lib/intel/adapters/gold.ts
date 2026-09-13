@@ -1,4 +1,5 @@
-import { finiteNumbers, getJson, nowIso } from "../http.ts";
+import { finiteNumbers, getJson, nowIso, settled } from "../http.ts";
+import { stooqQuote } from "../stooq.ts";
 import type { Quote } from "../types.ts";
 import { yahooQuote } from "../yahoo.ts";
 
@@ -7,13 +8,37 @@ interface CurrencyPayload {
   usd?: Record<string, number>;
 }
 
-async function paxgSpark(): Promise<number[]> {
-  const data = await getJson<{ prices?: Array<[number, number]> }>(
-    "https://api.coingecko.com/api/v3/coins/pax-gold/market_chart?vs_currency=usd&days=30&interval=daily",
-    {},
-    8_000,
+async function paxgQuote(): Promise<Quote> {
+  const data = await getJson<{
+    "pax-gold"?: { usd?: number; usd_24h_change?: number };
+  }>(
+    "https://api.coingecko.com/api/v3/simple/price?ids=pax-gold&vs_currencies=usd&include_24hr_change=true",
   );
-  return finiteNumbers((data.prices ?? []).map((p) => p[1]));
+  const row = data["pax-gold"];
+  if (!row?.usd) throw new Error("CoinGecko missing pax-gold");
+  let spark: number[] = [];
+  try {
+    const chart = await getJson<{ prices?: Array<[number, number]> }>(
+      "https://api.coingecko.com/api/v3/coins/pax-gold/market_chart?vs_currency=usd&days=30&interval=daily",
+    );
+    spark = finiteNumbers((chart.prices ?? []).map((p) => p[1]));
+  } catch {
+    /* optional */
+  }
+  return {
+    kind: "gold",
+    title: "PAXG (tokenized gold)",
+    price: row.usd,
+    currency: "USD",
+    unit: "oz",
+    changePct: row.usd_24h_change ?? null,
+    vendor: "CoinGecko",
+    source: "coingecko:pax-gold",
+    url: "https://www.coingecko.com/en/coins/pax-gold",
+    spark,
+    note: "On-chain gold proxy, not COMEX.",
+    asOf: nowIso(),
+  };
 }
 
 async function spotFromCurrencyApi(): Promise<Quote> {
@@ -45,16 +70,8 @@ async function spotFromCurrencyApi(): Promise<Quote> {
 async function spotFromGoldApiCom(): Promise<Quote> {
   const data = await getJson<{ price?: number; updatedAt?: string }>(
     "https://api.gold-api.com/price/XAU",
-    {},
-    8_000,
   );
   if (!data.price) throw new Error("gold-api.com returned no price");
-  let spark: number[] = [];
-  try {
-    spark = await paxgSpark();
-  } catch {
-    /* optional */
-  }
   return {
     kind: "gold",
     title: "Gold spot XAU/USD",
@@ -64,7 +81,6 @@ async function spotFromGoldApiCom(): Promise<Quote> {
     vendor: "gold-api.com",
     source: "gold-api.com:XAU",
     url: "https://gold-api.com",
-    spark,
     asOf: data.updatedAt ?? nowIso(),
   };
 }
@@ -90,46 +106,82 @@ async function optionalGoldApi(): Promise<Quote | null> {
     vendor: "GoldAPI.io",
     source: "goldapi:XAU/USD",
     url: "https://www.goldapi.io",
-    note: "Optional paid/free-key path. Also has official MCP: @goldapi/mcp-server",
+    note: "Optional paid/free-key path.",
     asOf: nowIso(),
   };
+}
+
+const OPTIONAL_PREFIXES = ["Stooq", "GoldAPI optional", "PAXG"];
+
+function attachCny(quotes: Quote[]) {
+  const cny = quotes.find((q) => typeof q.extra?.usdCny === "number")?.extra?.usdCny;
+  if (typeof cny !== "number") return;
+  for (const q of quotes) {
+    if (q.price == null) continue;
+    q.extra = {
+      ...(q.extra ?? {}),
+      usdCny: cny,
+      cnyPerGramApprox:
+        typeof q.extra?.cnyPerGramApprox === "number"
+          ? q.extra.cnyPerGramApprox
+          : Number(((q.price / 31.1034768) * cny).toFixed(2)),
+    };
+  }
 }
 
 export async function collectGold(): Promise<{ quotes: Quote[]; warnings: string[] }> {
   const quotes: Quote[] = [];
   const warnings: string[] = [];
 
-  try {
-    quotes.push(
-      await yahooQuote({
+  const jobs = await Promise.all([
+    settled(
+      "COMEX GC=F",
+      yahooQuote({
         symbol: "GC=F",
         kind: "gold",
         title: "COMEX Gold futures",
         unit: "oz",
       }),
-    );
-  } catch (err) {
-    warnings.push(`COMEX GC=F failed: ${(err as Error).message}`);
+    ),
+    settled(
+      "Stooq XAUUSD",
+      stooqQuote({
+        symbol: "xauusd",
+        kind: "gold",
+        title: "Gold spot XAU/USD",
+        unit: "oz",
+        note: "Stooq 现货后备。",
+      }),
+    ),
+    settled("gold-api.com", spotFromGoldApiCom()),
+    settled("currency-api", spotFromCurrencyApi()),
+    settled("PAXG", paxgQuote()),
+    settled("GoldAPI optional", optionalGoldApi()),
+  ]);
+
+  for (const job of jobs) {
+    if (!job.ok) {
+      if (!OPTIONAL_PREFIXES.some((p) => job.error.startsWith(p))) warnings.push(job.error);
+      continue;
+    }
+    if (job.value) quotes.push(job.value);
   }
 
-  try {
-    quotes.push(await spotFromGoldApiCom());
-  } catch (err) {
-    warnings.push(`gold-api.com failed: ${(err as Error).message}`);
+  const spark = quotes.find((q) => (q.spark?.length ?? 0) > 1)?.spark;
+  if (spark) {
+    for (const q of quotes) {
+      if (!q.spark || q.spark.length < 2) q.spark = spark;
+    }
   }
 
-  try {
-    quotes.push(await spotFromCurrencyApi());
-  } catch (err) {
-    warnings.push(`currency-api failed: ${(err as Error).message}`);
-  }
+  const seen = new Set<string>();
+  const deduped = quotes.filter((q) => {
+    const key = `${q.source}:${q.price}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 
-  try {
-    const extra = await optionalGoldApi();
-    if (extra) quotes.push(extra);
-  } catch (err) {
-    warnings.push(`GoldAPI optional path failed: ${(err as Error).message}`);
-  }
-
-  return { quotes, warnings };
+  attachCny(deduped);
+  return { quotes: deduped, warnings };
 }

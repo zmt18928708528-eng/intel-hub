@@ -2,16 +2,11 @@ import { collectGold } from "./adapters/gold.ts";
 import { collectGpu } from "./adapters/gpu.ts";
 import { collectMacMini } from "./adapters/macmini.ts";
 import { nowIso } from "./http.ts";
+import { bundledSnapshot, emptyBundle, loadRemoteSnapshot, mergeSnapshot } from "./snapshot.ts";
 import type { IntelBundle, TrackKind } from "./types.ts";
 
 export async function collectAll(only?: TrackKind): Promise<IntelBundle> {
-  const bundle: IntelBundle = {
-    asOf: nowIso(),
-    gold: [],
-    gpu: [],
-    macmini: [],
-    warnings: [],
-  };
+  const bundle = emptyBundle();
 
   const jobs: Array<Promise<void>> = [];
   if (!only || only === "gold") {
@@ -41,5 +36,15 @@ export async function collectAll(only?: TrackKind): Promise<IntelBundle> {
 
   await Promise.all(jobs);
   bundle.asOf = nowIso();
-  return bundle;
+
+  let next = mergeSnapshot(bundle, bundledSnapshot(), only);
+  const emptyTrack =
+    ((!only || only === "gold") && next.gold.length === 0) ||
+    ((!only || only === "gpu") && next.gpu.length === 0) ||
+    ((!only || only === "macmini") && next.macmini.length === 0);
+  if (emptyTrack) {
+    const remote = await loadRemoteSnapshot();
+    if (remote) next = mergeSnapshot(next, remote, only);
+  }
+  return next;
 }

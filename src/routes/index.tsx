@@ -2,10 +2,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Dashboard, DashboardSkeleton } from "@/components/intel/dashboard";
-import { fetchIntel } from "@/lib/intel/functions";
+import { bundledSnapshot } from "@/lib/intel/snapshot";
 
 export const Route = createFileRoute("/")({
-  loader: () => fetchIntel({ data: {} }),
+  loader: () => bundledSnapshot(),
   pendingComponent: DashboardSkeleton,
   component: Home,
 });
@@ -16,7 +16,7 @@ function Home() {
     () =>
       new QueryClient({
         defaultOptions: {
-          queries: { staleTime: 30_000, refetchOnWindowFocus: false },
+          queries: { staleTime: 15_000, refetchOnWindowFocus: false },
         },
       }),
   );
