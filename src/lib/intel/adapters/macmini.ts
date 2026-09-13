@@ -1,4 +1,4 @@
-import { getText, nowIso } from "../http.ts";
+import { getText, nowIso, settled } from "../http.ts";
 import type { Quote } from "../types.ts";
 import { yahooQuote } from "../yahoo.ts";
 
@@ -106,11 +106,11 @@ function fromBootstrap(html: string): Quote[] {
 }
 
 async function appleRefurbQuotes(): Promise<Quote[]> {
-  let html = await getText(MINI_URL, 8_000);
+  let html = await getText(MINI_URL);
   let quotes = fromJsonLd(html);
   if (quotes.length === 0) quotes = fromBootstrap(html);
   if (quotes.length === 0) {
-    html = await getText(REFURB_URL, 8_000);
+    html = await getText(REFURB_URL);
     quotes = fromJsonLd(html);
     if (quotes.length === 0) quotes = fromBootstrap(html);
   }
@@ -121,11 +121,24 @@ export async function collectMacMini(): Promise<{ quotes: Quote[]; warnings: str
   const quotes: Quote[] = [];
   const warnings: string[] = [];
 
-  try {
-    const live = await appleRefurbQuotes();
-    quotes.push(...live);
-    if (live.length === 0) {
-      warnings.push("Apple refurbished listing currently has no Mac mini tiles (common when sold out).");
+  const [refurb, aapl] = await Promise.all([
+    settled("Apple refurbished", appleRefurbQuotes()),
+    settled(
+      "AAPL proxy",
+      yahooQuote({
+        symbol: "AAPL",
+        kind: "macmini",
+        title: "AAPL (Apple hardware proxy)",
+        unit: "share",
+        note: "Not a Mac mini SKU price.",
+      }),
+    ),
+  ]);
+
+  if (refurb.ok) {
+    quotes.push(...refurb.value);
+    if (refurb.value.length === 0) {
+      warnings.push("Apple 翻新页当前没有 Mac mini 在售（缺货时很常见）。");
       quotes.push({
         kind: "macmini",
         title: "Refurbished Mac mini inventory",
@@ -135,12 +148,12 @@ export async function collectMacMini(): Promise<{ quotes: Quote[]; warnings: str
         vendor: "Apple",
         source: "apple:refurb",
         url: MINI_URL,
-        note: "Watch this URL / fork saadiq/refurb-mini-spy or brosePR/macmini-watch.",
+        note: "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
         asOf: nowIso(),
       });
     }
-  } catch (err) {
-    warnings.push(`Apple refurbished fetch failed: ${(err as Error).message}`);
+  } else {
+    warnings.push(refurb.error);
   }
 
   for (const row of OFFICIAL_MSRP) {
@@ -158,19 +171,8 @@ export async function collectMacMini(): Promise<{ quotes: Quote[]; warnings: str
     });
   }
 
-  try {
-    quotes.push(
-      await yahooQuote({
-        symbol: "AAPL",
-        kind: "macmini",
-        title: "AAPL (Apple hardware proxy)",
-        unit: "share",
-        note: "Not a Mac mini SKU price.",
-      }),
-    );
-  } catch (err) {
-    warnings.push(`AAPL proxy failed: ${(err as Error).message}`);
-  }
+  if (aapl.ok) quotes.push(aapl.value);
+  else warnings.push(aapl.error);
 
   return { quotes, warnings };
 }

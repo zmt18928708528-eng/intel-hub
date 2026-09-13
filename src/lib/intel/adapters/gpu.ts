@@ -1,4 +1,4 @@
-import { getJson, nowIso } from "../http.ts";
+import { getJson, isStale, nowIso, settled } from "../http.ts";
 import type { Quote } from "../types.ts";
 import { yahooQuote } from "../yahoo.ts";
 
@@ -56,9 +56,16 @@ function pickCheapest(rows: GpuRow[], model: string): GpuRow | undefined {
 }
 
 async function cloudGpuQuotes(): Promise<Quote[]> {
-  const payload = await getJson<GpuTrackerFile>("https://gputracker.dev/gpu-data.json", {}, 10_000);
+  const payload = await getJson<GpuTrackerFile>("https://gputracker.dev/gpu-data.json", {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+      Accept: "application/json,*/*",
+    },
+  });
   const rows = payload.data ?? [];
   const quotes: Quote[] = [];
+  const stale = isStale(payload.lastUpdated ?? rows[0]?.lastUpdated);
   for (const model of WATCH_MODELS) {
     const row = pickCheapest(rows, model);
     if (!row) continue;
@@ -78,7 +85,9 @@ async function cloudGpuQuotes(): Promise<Quote[]> {
         gpuCount: row.gpuCount ?? null,
         availability: row.availability ?? "",
         watchModel: model,
+        stale,
       },
+      note: stale ? "gputracker 快照较旧，云租价请对照 RunPod。" : undefined,
       asOf: row.lastUpdated ?? payload.lastUpdated ?? nowIso(),
     });
   }
@@ -86,18 +95,13 @@ async function cloudGpuQuotes(): Promise<Quote[]> {
 }
 
 async function runpodQuotes(): Promise<Quote[]> {
-  const payload = await getJson<RunpodPayload>(
-    "https://api.runpod.io/graphql",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query:
-          "{ gpuTypes { id displayName memoryInGb lowestPrice { uninterruptablePrice } } }",
-      }),
-    },
-    10_000,
-  );
+  const payload = await getJson<RunpodPayload>("https://api.runpod.io/graphql", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: "{ gpuTypes { id displayName memoryInGb lowestPrice { uninterruptablePrice } } }",
+    }),
+  });
   const types = payload.data?.gpuTypes ?? [];
   const quotes: Quote[] = [];
   for (const model of WATCH_MODELS) {
@@ -145,7 +149,7 @@ async function nvidiaRetailQuotes(): Promise<Quote[]> {
   const data = await getJson<NvidiaSearch>(
     `https://api.nvidia.partners/edge/product/search?page=1&limit=12&locale=${locale}&category=GPU`,
     {},
-    8_000,
+    6_000,
   );
   const details = data.searchedProducts?.productDetails ?? [];
   return details
@@ -169,38 +173,29 @@ export async function collectGpu(): Promise<{ quotes: Quote[]; warnings: string[
   const quotes: Quote[] = [];
   const warnings: string[] = [];
 
-  try {
-    quotes.push(...(await cloudGpuQuotes()));
-  } catch (err) {
-    warnings.push(`gputracker.dev failed: ${(err as Error).message}`);
-  }
-
-  if (!quotes.some((q) => q.source === "gputracker.dev")) {
-    try {
-      quotes.push(...(await runpodQuotes()));
-    } catch (err) {
-      warnings.push(`RunPod GPU list failed: ${(err as Error).message}`);
-    }
-  }
-
-  try {
-    quotes.push(...(await nvidiaRetailQuotes()));
-  } catch (err) {
-    warnings.push(`NVIDIA partner API failed: ${(err as Error).message}`);
-  }
-
-  try {
-    quotes.push(
-      await yahooQuote({
+  const jobs = await Promise.all([
+    settled("gputracker.dev", cloudGpuQuotes()),
+    settled("RunPod GPU list", runpodQuotes()),
+    settled("NVIDIA partner API", nvidiaRetailQuotes()),
+    settled(
+      "NVDA proxy",
+      yahooQuote({
         symbol: "NVDA",
         kind: "gpu",
         title: "NVDA (GPU market proxy)",
         unit: "share",
         note: "Not a card price. Useful as sector sentiment.",
       }),
-    );
-  } catch (err) {
-    warnings.push(`NVDA proxy failed: ${(err as Error).message}`);
+    ),
+  ]);
+
+  for (const job of jobs) {
+    if (!job.ok) {
+      warnings.push(job.error);
+      continue;
+    }
+    if (Array.isArray(job.value)) quotes.push(...job.value);
+    else quotes.push(job.value);
   }
 
   return { quotes, warnings };
