@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Sparkline } from "@/components/intel/sparkline";
-import { formatChange, formatMoney, formatUnit, relativeTime } from "@/lib/intel/format";
+import { extraLine, formatChange, formatMoney, formatUnit, relativeTime } from "@/lib/intel/format";
 import { quoteKey, type Quote } from "@/lib/intel/types";
 import { cn } from "@/lib/utils";
 import { useWatchlist } from "@/stores/watchlist";
@@ -17,8 +17,10 @@ export function QuoteCard({ quote }: { quote: Quote }) {
   const watched = useWatchlist((s) => s.keys.includes(key));
   const toggle = useWatchlist((s) => s.toggle);
   const change = formatChange(quote.changePct);
-  const tone =
-    quote.changePct == null ? "neutral" : quote.changePct >= 0 ? "up" : "down";
+  const tone = quote.changePct == null ? "neutral" : quote.changePct >= 0 ? "up" : "down";
+  const meta = extraLine(quote);
+  const stale = quote.extra?.stale === true;
+  const snap = quote.extra?.fromSnapshot === true;
 
   return (
     <article className="group flex min-h-[168px] flex-col rounded-xl border border-border bg-surface p-4 transition-[border-color,background-color] duration-[var(--motion-quick)] ease-[var(--ease-out)] hover:border-border-strong hover:bg-surface-2">
@@ -44,12 +46,13 @@ export function QuoteCard({ quote }: { quote: Quote }) {
         <span className="ml-1 text-xs text-subtle">{formatUnit(quote.unit)}</span>
       </p>
       <div className="mt-2 flex flex-wrap items-center gap-1.5">
-        {change && (
-          <Badge variant={tone === "up" ? "up" : "down"}>{change}</Badge>
-        )}
+        {change && <Badge variant={tone === "up" ? "up" : "down"}>{change}</Badge>}
         {quote.inStock === true && <Badge variant="stock">有货</Badge>}
         {quote.inStock === false && <Badge variant="warn">缺货</Badge>}
+        {stale && <Badge variant="warn">较旧</Badge>}
+        {snap && <Badge variant="default">快照</Badge>}
       </div>
+      {meta ? <p className="mt-2 line-clamp-1 text-[11px] text-subtle">{meta}</p> : null}
       {quote.spark && quote.spark.length > 1 && (
         <div className="mt-3">
           <Sparkline values={quote.spark} tone={tone} />
