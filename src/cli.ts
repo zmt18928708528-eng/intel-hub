@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { collectAll } from "./collect.ts";
-import type { Quote, TrackKind } from "./types.ts";
+import { collectAll } from "./lib/intel/collect.ts";
+import type { Quote, TrackKind } from "./lib/intel/types.ts";
 
 function fmt(q: Quote): string {
   const price =
