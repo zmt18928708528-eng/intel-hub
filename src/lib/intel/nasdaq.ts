@@ -33,7 +33,6 @@ export async function nasdaqQuote(opts: {
         Referer: "https://www.nasdaq.com/",
       },
     },
-    8_000,
   );
   const row = data.data;
   const price = parseMoney(row?.lastSalePrice);

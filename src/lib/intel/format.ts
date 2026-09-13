@@ -50,5 +50,27 @@ export function relativeTime(iso?: string): string {
   if (Math.abs(min) < 60) return `${min} 分钟前`;
   const hr = Math.round(min / 60);
   if (Math.abs(hr) < 24) return `${hr} 小时前`;
+  const day = Math.round(hr / 24);
+  if (Math.abs(day) < 14) return `${day} 天前`;
   return formatStamp(iso);
+}
+
+export function cnyPerGram(q?: Quote | null): string | null {
+  const n = q?.extra?.cnyPerGramApprox;
+  if (typeof n !== "number" || !Number.isFinite(n)) return null;
+  return `约 ¥${n.toLocaleString("zh-CN", { maximumFractionDigits: 0 })} / 克`;
+}
+
+export function extraLine(q: Quote): string {
+  const bits: string[] = [];
+  if (typeof q.extra?.watchModel === "string" && q.extra.watchModel) bits.push(String(q.extra.watchModel));
+  if (typeof q.extra?.vram === "number") bits.push(`${q.extra.vram} GB`);
+  if (typeof q.extra?.region === "string" && q.extra.region) bits.push(String(q.extra.region));
+  if (typeof q.extra?.availability === "string" && q.extra.availability) {
+    bits.push(String(q.extra.availability));
+  }
+  if (typeof q.extra?.sku === "string" && q.extra.sku) bits.push(String(q.extra.sku));
+  const cny = cnyPerGram(q);
+  if (cny) bits.push(cny);
+  return bits.join(" · ");
 }

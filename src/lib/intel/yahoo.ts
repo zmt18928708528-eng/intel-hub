@@ -1,5 +1,5 @@
 import { nasdaqQuote } from "./nasdaq.ts";
-import { finiteNumbers, getJson, nowIso } from "./http.ts";
+import { FETCH_MS, finiteNumbers, getJson, nowIso } from "./http.ts";
 import type { Quote, TrackKind } from "./types.ts";
 
 interface YahooChart {
@@ -22,7 +22,7 @@ async function fromYahoo(symbol: string, host: string, range: string) {
   const data = await getJson<YahooChart>(
     `https://${host}/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=${range}`,
     {},
-    6_000,
+    FETCH_MS,
   );
   const result = data.chart?.result?.[0];
   const meta = result?.meta;
@@ -51,8 +51,9 @@ export async function yahooQuote(opts: {
 }): Promise<Quote> {
   const range = opts.range ?? "1mo";
   const errors: string[] = [];
+  const hosts = ["query1.finance.yahoo.com", "query2.finance.yahoo.com"];
 
-  for (const host of ["query1.finance.yahoo.com", "query2.finance.yahoo.com"]) {
+  for (const host of hosts) {
     try {
       const seed = await fromYahoo(opts.symbol, host, range);
       return {
