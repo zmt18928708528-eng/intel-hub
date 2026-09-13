@@ -191,6 +191,7 @@ export async function collectGpu(): Promise<{ quotes: Quote[]; warnings: string[
 
   for (const job of jobs) {
     if (!job.ok) {
+      if (/NVIDIA/i.test(job.error) && /abort|timeout|timed out/i.test(job.error)) continue;
       warnings.push(job.error);
       continue;
     }
