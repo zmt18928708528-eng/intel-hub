@@ -7,7 +7,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { fetchIntel } from "@/lib/intel/functions";
-import { formatChange, formatMoney, formatStamp, TRACK_LABEL } from "@/lib/intel/format";
+import {
+  cnyPerGram,
+  formatChange,
+  formatMoney,
+  formatStamp,
+  TRACK_LABEL,
+} from "@/lib/intel/format";
 import { quoteKey, type IntelBundle, type Quote, type TrackKind } from "@/lib/intel/types";
 import { cn } from "@/lib/utils";
 import { useWatchlist } from "@/stores/watchlist";
@@ -22,17 +28,23 @@ const TABS: Array<{ id: Tab; label: string }> = [
   { id: "watch", label: "关注" },
 ];
 
+const GPU_MODELS = ["RTX5090", "RTX4090", "H100", "B200", "A100", "RTX5080", "RTX5070"];
+
+const REFRESH_MS = 90_000;
+
 function cheapestCloudGpu(gpu: Quote[]): Quote | undefined {
   const cloud = gpu.filter(
     (q) =>
       (q.source === "gputracker.dev" || q.source === "runpod:graphql") && q.price != null,
   );
+  const fresh = cloud.filter((q) => q.extra?.stale !== true);
+  const pool = fresh.length > 0 ? fresh : cloud;
   const preferred = ["RTX5090", "RTX4090", "H100", "B200", "A100", "RTX5080"];
   for (const model of preferred) {
-    const hit = cloud.find((q) => q.extra?.watchModel === model);
+    const hit = pool.find((q) => q.extra?.watchModel === model);
     if (hit) return hit;
   }
-  return [...cloud].sort((a, b) => (a.price ?? 99) - (b.price ?? 99))[0];
+  return [...pool].sort((a, b) => (a.price ?? 99) - (b.price ?? 99))[0];
 }
 
 function refurbStock(mac: Quote[]): { count: number; quote?: Quote } {
@@ -45,9 +57,22 @@ function refurbStock(mac: Quote[]): { count: number; quote?: Quote } {
   return { count: live.filter((q) => q.price != null).length, quote: live[0] ?? any };
 }
 
+function sourcePills(data: IntelBundle): Array<{ id: string; ok: boolean }> {
+  const has = (prefix: string) =>
+    [...data.gold, ...data.gpu, ...data.macmini].some((q) => q.source.startsWith(prefix));
+  return [
+    { id: "Yahoo / Nasdaq", ok: has("yahoo:") || has("nasdaq:") },
+    { id: "Gold spot", ok: has("gold-api") || has("currency-api") || has("coingecko") },
+    { id: "RunPod", ok: has("runpod:") },
+    { id: "gputracker", ok: has("gputracker") },
+    { id: "Apple", ok: has("apple:") },
+  ];
+}
+
 export function Dashboard({ initial }: { initial: IntelBundle }) {
   const [tab, setTab] = useState<Tab>("all");
   const [query, setQuery] = useState("");
+  const [model, setModel] = useState<string | null>(null);
   const watchKeys = useWatchlist((s) => s.keys);
   const hydrate = useWatchlist((s) => s.hydrate);
 
@@ -59,29 +84,48 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
     queryKey: ["intel"],
     queryFn: () => fetchIntel({ data: { force: true } }),
     initialData: initial,
-    refetchInterval: 90_000,
+    staleTime: 0,
+    refetchOnMount: "always",
+    refetchInterval: REFRESH_MS,
   });
 
   const data = intelQuery.data ?? initial;
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const id = window.setInterval(() => setTick((n) => n + 1), 1000);
+    return () => window.clearInterval(id);
+  }, []);
+  const updatedAt = intelQuery.dataUpdatedAt || Date.now();
+  const remain = Math.max(0, Math.round((REFRESH_MS - (Date.now() - updatedAt)) / 1000));
+  void tick;
 
   const gold =
     data.gold.find(
       (q) =>
         q.source.startsWith("yahoo:") ||
         q.source.startsWith("stooq:") ||
-        q.source.startsWith("gold-api.com"),
+        q.source.startsWith("gold-api.com") ||
+        q.source.startsWith("goldprice.org"),
     ) ?? data.gold[0];
   const gpuDeal = cheapestCloudGpu(data.gpu);
   const mini = refurbStock(data.macmini);
   const nvda = data.gpu.find((q) => q.source === "yahoo:NVDA" || q.source === "nasdaq:NVDA");
+  const pills = sourcePills(data);
+  const usingSnap = [...data.gold, ...data.gpu, ...data.macmini].some(
+    (q) => q.extra?.fromSnapshot === true,
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const match = (item: Quote) =>
-      !q ||
-      item.title.toLowerCase().includes(q) ||
-      item.vendor.toLowerCase().includes(q) ||
-      item.source.toLowerCase().includes(q);
+    const match = (item: Quote) => {
+      const hay = `${item.title} ${item.vendor} ${item.source} ${item.extra?.watchModel ?? ""}`.toLowerCase();
+      if (q && !hay.includes(q)) return false;
+      if (model && item.kind === "gpu") {
+        const wm = String(item.extra?.watchModel ?? "");
+        if (wm !== model && !item.title.toUpperCase().includes(model)) return false;
+      }
+      return true;
+    };
 
     const goldQ = data.gold.filter(match);
     const gpuQ = data.gpu.filter(match);
@@ -100,7 +144,7 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
       gpu: tab === "all" || tab === "gpu" ? gpuQ : [],
       macmini: tab === "all" || tab === "macmini" ? macQ : [],
     };
-  }, [data, query, tab, watchKeys]);
+  }, [data, query, tab, watchKeys, model]);
 
   const emptyWatch = tab === "watch" && watchKeys.length === 0;
   const emptyFilter =
@@ -118,11 +162,16 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
               Intel Hub
             </h1>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
-              黄金期货与现货、云 GPU 租价、Mac mini 翻新库存。公开接口聚合，60 秒缓存。
+              黄金期货与现货、云 GPU 租价、Mac mini 翻新库存。公开接口聚合，失败自动用快照补齐。
             </p>
           </div>
-          <div className="flex items-center gap-3">
-            <p className="text-xs tabular-nums text-subtle">{formatStamp(data.asOf)}</p>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="text-right">
+              <p className="text-xs tabular-nums text-subtle">{formatStamp(data.asOf)}</p>
+              <p className="text-[11px] tabular-nums text-subtle">
+                {intelQuery.isFetching ? "正在更新" : `${remain}s 后自动刷新`}
+              </p>
+            </div>
             <Button
               variant="outline"
               size="sm"
@@ -135,6 +184,30 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
           </div>
         </div>
 
+        <div className="flex flex-wrap items-center gap-1.5">
+          <Badge variant={usingSnap ? "warn" : "stock"}>{usingSnap ? "部分快照" : "实时"}</Badge>
+          {pills.map((p) => (
+            <span
+              key={p.id}
+              className={cn(
+                "rounded-full border px-2.5 py-1 text-[11px]",
+                p.ok
+                  ? "border-border text-muted"
+                  : "border-dashed border-border text-subtle",
+              )}
+            >
+              {p.id}
+              {p.ok ? "" : " · 缺"}
+            </span>
+          ))}
+          <a
+            href="/api/intel"
+            className="ml-auto text-[11px] text-muted underline-offset-2 hover:text-fg hover:underline"
+          >
+            JSON API
+          </a>
+        </div>
+
         <div className="grid gap-3 sm:grid-cols-3">
           <Kpi
             kicker={
@@ -143,7 +216,7 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
                 : "黄金现货"
             }
             title={gold ? formatMoney(gold) : "—"}
-            hint={gold?.unit ? `每 ${gold.unit}` : ""}
+            hint={cnyPerGram(gold) ?? (gold?.unit ? `每 ${gold.unit}` : "")}
             change={formatChange(gold?.changePct)}
             spark={gold?.spark}
             tone={gold?.changePct != null && gold.changePct < 0 ? "down" : "up"}
@@ -171,7 +244,7 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
         <div className="flex gap-3 rounded-lg border border-warn/25 bg-warn/10 px-4 py-3">
           <TriangleAlert className="mt-0.5 size-4 shrink-0 text-warn" />
           <ul className="space-y-1 text-sm text-muted">
-            {data.warnings.map((w) => (
+            {data.warnings.slice(0, 6).map((w) => (
               <li key={w}>
                 {w
                   .replace(/https?:\/\/\S+/g, "")
@@ -217,6 +290,26 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
         </label>
       </div>
 
+      {(tab === "gpu" || tab === "all") && (
+        <div className="flex flex-wrap gap-1.5">
+          {GPU_MODELS.map((m) => (
+            <button
+              key={m}
+              type="button"
+              onClick={() => setModel((cur) => (cur === m ? null : m))}
+              className={cn(
+                "h-9 rounded-full border px-3 text-xs font-medium",
+                model === m
+                  ? "border-accent bg-accent text-accent-fg"
+                  : "border-border text-muted hover:border-border-strong hover:text-fg",
+              )}
+            >
+              {m}
+            </button>
+          ))}
+        </div>
+      )}
+
       {emptyWatch ? (
         <EmptyState
           title="还没有关注项"
@@ -227,7 +320,7 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
           title={intelQuery.isFetching ? "正在拉取情报" : "没有匹配的报价"}
           body={
             intelQuery.isFetching
-              ? "正在请求 Yahoo、gputracker 与 Apple。"
+              ? "正在请求 Yahoo、Stooq、gputracker 与 Apple。"
               : "换个关键词，或切回全部。"
           }
         />
@@ -240,7 +333,10 @@ export function Dashboard({ initial }: { initial: IntelBundle }) {
       )}
 
       <footer className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-subtle sm:flex-row sm:items-center sm:justify-between">
-        <p>数据来自 Yahoo Finance、currency-api、gputracker.dev、NVIDIA Partner Search、Apple 翻新页。</p>
+        <p>
+          数据来自 Yahoo Finance、Stooq、gold-api.com、currency-api、gputracker.dev、RunPod、NVIDIA
+          Partner Search、Apple 翻新页。不是投资建议。
+        </p>
         <a
           href="https://github.com/zmt18928708528-eng/intel-hub"
           className="hover:text-fg"
@@ -301,6 +397,7 @@ function Kpi({
 
 function Section({ kind, quotes }: { kind: TrackKind; quotes: Quote[] }) {
   if (quotes.length === 0) return null;
+  const sorted = [...quotes].sort((a, b) => (a.price ?? 1e12) - (b.price ?? 1e12));
   return (
     <section>
       <div className="mb-4 flex items-baseline justify-between">
@@ -308,7 +405,7 @@ function Section({ kind, quotes }: { kind: TrackKind; quotes: Quote[] }) {
         <p className="text-xs tabular-nums text-subtle">{quotes.length} 条</p>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {quotes.map((q) => (
+        {sorted.map((q) => (
           <QuoteCard key={quoteKey(q)} quote={q} />
         ))}
       </div>
