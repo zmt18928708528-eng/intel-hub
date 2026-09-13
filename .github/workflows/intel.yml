@@ -19,5 +19,5 @@ jobs:
       - run: node --experimental-strip-types src/cli.ts all --json > data/latest.json
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: refresh intel snapshot"
+          commit_message: "chore: refresh intel snapshot [skip ci]"
           file_pattern: data/latest.json
