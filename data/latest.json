@@ -1,18 +1,17 @@
 {
-  "asOf": "2026-09-14T00:29:34.455Z",
+  "asOf": "2026-09-14T05:30:11.571Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4383,
+      "price": 4370.2,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.587,
+      "changePct": -0.878,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
       "spark": [
-        4363.60009765625,
         4380.39990234375,
         4417.7998046875,
         4366,
@@ -33,12 +32,50 @@
         4416,
         4364.5,
         4366.2001953125,
-        4383
+        4370.2001953125
       ],
-      "asOf": "2026-09-14T00:19:18.000Z",
+      "asOf": "2026-09-14T05:20:05.000Z",
       "extra": {
         "usdCny": 6.70962027,
-        "cnyPerGramApprox": 945.5
+        "cnyPerGramApprox": 942.74
+      }
+    },
+    {
+      "kind": "gold",
+      "title": "Gold spot XAU/USD",
+      "price": 4327.700195,
+      "currency": "USD",
+      "unit": "oz",
+      "vendor": "gold-api.com",
+      "source": "gold-api.com:XAU",
+      "url": "https://gold-api.com",
+      "asOf": "2026-09-14T05:30:07Z",
+      "spark": [
+        4380.39990234375,
+        4417.7998046875,
+        4366,
+        4489.39990234375,
+        4516.2998046875,
+        4624.10009765625,
+        4640.7998046875,
+        4638.10009765625,
+        4598.2001953125,
+        4609.7001953125,
+        4478.10009765625,
+        4431.10009765625,
+        4348,
+        4366.2998046875,
+        4491.7001953125,
+        4429.7998046875,
+        4393.89990234375,
+        4416,
+        4364.5,
+        4366.2001953125,
+        4370.2001953125
+      ],
+      "extra": {
+        "usdCny": 6.70962027,
+        "cnyPerGramApprox": 933.57
       }
     },
     {
@@ -57,7 +94,6 @@
       "note": "Daily FX table, not tick-level COMEX.",
       "asOf": "2026-09-13T00:00:00.000Z",
       "spark": [
-        4363.60009765625,
         4380.39990234375,
         4417.7998046875,
         4366,
@@ -78,16 +114,16 @@
         4416,
         4364.5,
         4366.2001953125,
-        4383
+        4370.2001953125
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4339.02,
+      "price": 4331.99,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.3585096994204076,
+      "changePct": -0.5476300401471214,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -122,39 +158,13 @@
         4355.021139119266,
         4354.717293719146,
         4335.501786690408,
-        4338.8826130675125
+        4331.985267890996
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-09-14T00:29:31.851Z",
+      "asOf": "2026-09-14T05:30:11.261Z",
       "extra": {
         "usdCny": 6.70962027,
-        "cnyPerGramApprox": 936.01
-      }
-    },
-    {
-      "kind": "gold",
-      "title": "Gold spot XAU/USD",
-      "price": 4349.700195,
-      "currency": "USD",
-      "unit": "oz",
-      "vendor": "gold-api.com",
-      "source": "gold-api.com:XAU",
-      "url": "https://gold-api.com",
-      "asOf": "2026-09-13T10:54:35Z",
-      "spark": [
-        4363.60009765625,
-        4417.7998046875,
-        4489.39990234375,
-        4624.10009765625,
-        4638.10009765625,
-        4609.7001953125,
-        4431.10009765625,
-        4366.2998046875
-      ],
-      "extra": {
-        "usdCny": 6.70659909,
-        "cnyPerGramApprox": 937.89,
-        "fromSnapshot": true
+        "cnyPerGramApprox": 934.49
       }
     }
   ],
@@ -341,7 +351,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-09-14T00:29:32.333Z"
+      "asOf": "2026-09-14T05:30:11.571Z"
     },
     {
       "kind": "gpu",
@@ -357,7 +367,7 @@
         "vram": 16,
         "watchModel": "RTX5080"
       },
-      "asOf": "2026-09-14T00:29:32.333Z"
+      "asOf": "2026-09-14T05:30:11.571Z"
     },
     {
       "kind": "gpu",
@@ -373,7 +383,7 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-09-14T00:29:32.333Z"
+      "asOf": "2026-09-14T05:30:11.571Z"
     },
     {
       "kind": "gpu",
@@ -389,7 +399,7 @@
         "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-09-14T00:29:32.333Z"
+      "asOf": "2026-09-14T05:30:11.571Z"
     },
     {
       "kind": "gpu",
@@ -405,7 +415,7 @@
         "vram": 180,
         "watchModel": "B200"
       },
-      "asOf": "2026-09-14T00:29:32.333Z"
+      "asOf": "2026-09-14T05:30:11.571Z"
     },
     {
       "kind": "gpu",
@@ -421,7 +431,7 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-09-14T00:29:32.333Z"
+      "asOf": "2026-09-14T05:30:11.571Z"
     },
     {
       "kind": "gpu",
@@ -437,7 +447,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-09-14T00:29:32.333Z"
+      "asOf": "2026-09-14T05:30:11.571Z"
     },
     {
       "kind": "gpu",
@@ -488,7 +498,7 @@
       "source": "apple:refurb",
       "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
       "note": "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
-      "asOf": "2026-09-14T00:29:33.781Z"
+      "asOf": "2026-09-14T05:30:11.373Z"
     },
     {
       "kind": "macmini",
@@ -500,7 +510,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-09-14T00:29:33.781Z"
+      "asOf": "2026-09-14T05:30:11.373Z"
     },
     {
       "kind": "macmini",
@@ -512,7 +522,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-09-14T00:29:33.781Z"
+      "asOf": "2026-09-14T05:30:11.373Z"
     },
     {
       "kind": "macmini",
@@ -553,7 +563,6 @@
     }
   ],
   "warnings": [
-    "gold-api.com: fetch failed",
     "Apple 翻新页当前没有 Mac mini 在售（缺货时很常见）。"
   ]
 }
