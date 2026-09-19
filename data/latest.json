@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-19T18:06:47.579Z",
+  "asOf": "2026-09-19T20:49:42.782Z",
   "gold": [
     {
       "kind": "gold",
@@ -50,7 +50,7 @@
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-09-19T18:06:17Z",
+      "asOf": "2026-09-19T20:49:17Z",
       "spark": [
         4545.2998046875,
         4571.39990234375,
@@ -123,10 +123,10 @@
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4364.73,
+      "price": 4363.79,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.4402001001418599,
+      "changePct": -0.15316076592541034,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -161,13 +161,13 @@
         4273.728849040525,
         4341.512905846094,
         4368.747015143593,
-        4364.901906731239
+        4363.87955318702
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-09-19T18:06:44.952Z",
+      "asOf": "2026-09-19T20:49:40.310Z",
       "extra": {
         "usdCny": 6.70164323,
-        "cnyPerGramApprox": 940.44
+        "cnyPerGramApprox": 940.23
       }
     }
   ],
@@ -354,7 +354,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-09-19T18:06:45.307Z"
+      "asOf": "2026-09-19T20:49:40.808Z"
     },
     {
       "kind": "gpu",
@@ -370,7 +370,7 @@
         "vram": 16,
         "watchModel": "RTX5080"
       },
-      "asOf": "2026-09-19T18:06:45.307Z"
+      "asOf": "2026-09-19T20:49:40.808Z"
     },
     {
       "kind": "gpu",
@@ -386,7 +386,7 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-09-19T18:06:45.307Z"
+      "asOf": "2026-09-19T20:49:40.808Z"
     },
     {
       "kind": "gpu",
@@ -402,7 +402,7 @@
         "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-09-19T18:06:45.307Z"
+      "asOf": "2026-09-19T20:49:40.808Z"
     },
     {
       "kind": "gpu",
@@ -418,23 +418,7 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-09-19T18:06:45.307Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "RTX 6000 Ada cloud rental · RunPod",
-      "price": 0.74,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 48,
-        "watchModel": "RTX6000"
-      },
-      "asOf": "2026-09-19T18:06:45.307Z"
+      "asOf": "2026-09-19T20:49:40.808Z"
     },
     {
       "kind": "gpu",
@@ -489,6 +473,23 @@
         "fromSnapshot": true
       },
       "asOf": "2026-09-13T10:55:05.227Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "RTX 6000 Ada cloud rental · RunPod",
+      "price": 0.74,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 48,
+        "watchModel": "RTX6000",
+        "fromSnapshot": true
+      },
+      "asOf": "2026-09-13T10:55:05.227Z"
     }
   ],
   "macmini": [
@@ -502,7 +503,7 @@
       "source": "apple:refurb",
       "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
       "note": "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
-      "asOf": "2026-09-19T18:06:45.571Z"
+      "asOf": "2026-09-19T20:49:40.682Z"
     },
     {
       "kind": "macmini",
@@ -514,7 +515,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-09-19T18:06:45.571Z"
+      "asOf": "2026-09-19T20:49:40.682Z"
     },
     {
       "kind": "macmini",
@@ -526,7 +527,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-09-19T18:06:45.571Z"
+      "asOf": "2026-09-19T20:49:40.682Z"
     },
     {
       "kind": "macmini",
