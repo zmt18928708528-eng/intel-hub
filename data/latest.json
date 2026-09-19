@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-19T20:49:42.782Z",
+  "asOf": "2026-09-19T22:33:30.849Z",
   "gold": [
     {
       "kind": "gold",
@@ -50,7 +50,7 @@
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-09-19T20:49:17Z",
+      "asOf": "2026-09-19T22:33:17Z",
       "spark": [
         4545.2998046875,
         4571.39990234375,
@@ -123,10 +123,10 @@
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4363.79,
+      "price": 4365.05,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.15316076592541034,
+      "changePct": -0.16691271039290215,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -161,13 +161,13 @@
         4273.728849040525,
         4341.512905846094,
         4368.747015143593,
-        4363.87955318702
+        4364.986751059628
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-09-19T20:49:40.310Z",
+      "asOf": "2026-09-19T22:33:28.442Z",
       "extra": {
         "usdCny": 6.70164323,
-        "cnyPerGramApprox": 940.23
+        "cnyPerGramApprox": 940.51
       }
     }
   ],
@@ -354,7 +354,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-09-19T20:49:40.808Z"
+      "asOf": "2026-09-19T22:33:28.785Z"
     },
     {
       "kind": "gpu",
@@ -370,7 +370,7 @@
         "vram": 16,
         "watchModel": "RTX5080"
       },
-      "asOf": "2026-09-19T20:49:40.808Z"
+      "asOf": "2026-09-19T22:33:28.785Z"
     },
     {
       "kind": "gpu",
@@ -386,12 +386,12 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-09-19T20:49:40.808Z"
+      "asOf": "2026-09-19T22:33:28.785Z"
     },
     {
       "kind": "gpu",
-      "title": "H100 PCIe cloud rental · RunPod",
-      "price": 1.99,
+      "title": "H100 NVL cloud rental · RunPod",
+      "price": 2.59,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -399,10 +399,26 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 80,
+        "vram": 94,
         "watchModel": "H100"
       },
-      "asOf": "2026-09-19T20:49:40.808Z"
+      "asOf": "2026-09-19T22:33:28.785Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "B200 cloud rental · RunPod",
+      "price": 5.98,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 180,
+        "watchModel": "B200"
+      },
+      "asOf": "2026-09-19T22:33:28.785Z"
     },
     {
       "kind": "gpu",
@@ -418,7 +434,23 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-09-19T20:49:40.808Z"
+      "asOf": "2026-09-19T22:33:28.785Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "RTX 6000 Ada cloud rental · RunPod",
+      "price": 0.74,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 48,
+        "watchModel": "RTX6000"
+      },
+      "asOf": "2026-09-19T22:33:28.785Z"
     },
     {
       "kind": "gpu",
@@ -456,40 +488,6 @@
         222.27000427246094
       ],
       "asOf": "2026-09-18T20:00:00.000Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "B200 cloud rental · RunPod",
-      "price": 5.98,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 180,
-        "watchModel": "B200",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "RTX 6000 Ada cloud rental · RunPod",
-      "price": 0.74,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 48,
-        "watchModel": "RTX6000",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
     }
   ],
   "macmini": [
@@ -503,7 +501,7 @@
       "source": "apple:refurb",
       "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
       "note": "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
-      "asOf": "2026-09-19T20:49:40.682Z"
+      "asOf": "2026-09-19T22:33:28.774Z"
     },
     {
       "kind": "macmini",
@@ -515,7 +513,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-09-19T20:49:40.682Z"
+      "asOf": "2026-09-19T22:33:28.774Z"
     },
     {
       "kind": "macmini",
@@ -527,7 +525,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-09-19T20:49:40.682Z"
+      "asOf": "2026-09-19T22:33:28.774Z"
     },
     {
       "kind": "macmini",
