@@ -1,13 +1,13 @@
 {
-  "asOf": "2026-09-22T10:05:12.547Z",
+  "asOf": "2026-09-22T15:01:23.487Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4367.5,
+      "price": 4358.4,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.374,
+      "changePct": -0.582,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
@@ -32,24 +32,24 @@
         4399.7001953125,
         4424.89990234375,
         4383.89990234375,
-        4367.5
+        4358.39990234375
       ],
-      "asOf": "2026-09-22T09:55:09.000Z",
+      "asOf": "2026-09-22T14:51:19.000Z",
       "extra": {
         "usdCny": 6.69611473,
-        "cnyPerGramApprox": 940.26
+        "cnyPerGramApprox": 938.3
       }
     },
     {
       "kind": "gold",
       "title": "Gold spot XAU/USD",
-      "price": 4337.700195,
+      "price": 4329.399902,
       "currency": "USD",
       "unit": "oz",
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-09-22T10:05:05Z",
+      "asOf": "2026-09-22T15:01:06Z",
       "spark": [
         4697.7998046875,
         4694.5,
@@ -71,11 +71,11 @@
         4399.7001953125,
         4424.89990234375,
         4383.89990234375,
-        4367.5
+        4358.39990234375
       ],
       "extra": {
         "usdCny": 6.69611473,
-        "cnyPerGramApprox": 933.84
+        "cnyPerGramApprox": 932.06
       }
     },
     {
@@ -114,16 +114,16 @@
         4399.7001953125,
         4424.89990234375,
         4383.89990234375,
-        4367.5
+        4358.39990234375
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4332.98,
+      "price": 4325.63,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.2574170274149472,
+      "changePct": -0.2725771685492632,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -158,13 +158,13 @@
         4364.74941569862,
         4362.971485039502,
         4364.464388537871,
-        4334.41134284425
+        4326.601792889404
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-09-22T10:05:09.923Z",
+      "asOf": "2026-09-22T15:01:21.216Z",
       "extra": {
         "usdCny": 6.69611473,
-        "cnyPerGramApprox": 932.83
+        "cnyPerGramApprox": 931.24
       }
     }
   ],
@@ -351,7 +351,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-09-22T10:05:10.228Z"
+      "asOf": "2026-09-22T15:01:21.482Z"
     },
     {
       "kind": "gpu",
@@ -367,7 +367,7 @@
         "vram": 16,
         "watchModel": "RTX5080"
       },
-      "asOf": "2026-09-22T10:05:10.228Z"
+      "asOf": "2026-09-22T15:01:21.482Z"
     },
     {
       "kind": "gpu",
@@ -383,12 +383,12 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-09-22T10:05:10.228Z"
+      "asOf": "2026-09-22T15:01:21.482Z"
     },
     {
       "kind": "gpu",
-      "title": "H100 NVL cloud rental · RunPod",
-      "price": 2.59,
+      "title": "H100 SXM cloud rental · RunPod",
+      "price": 2.69,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -396,10 +396,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 94,
+        "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-09-22T10:05:10.228Z"
+      "asOf": "2026-09-22T15:01:21.482Z"
     },
     {
       "kind": "gpu",
@@ -415,7 +415,7 @@
         "vram": 80,
         "watchModel": "A100"
       },
-      "asOf": "2026-09-22T10:05:10.228Z"
+      "asOf": "2026-09-22T15:01:21.482Z"
     },
     {
       "kind": "gpu",
@@ -431,15 +431,15 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-09-22T10:05:10.228Z"
+      "asOf": "2026-09-22T15:01:21.482Z"
     },
     {
       "kind": "gpu",
       "title": "NVDA (GPU market proxy)",
-      "price": 227.38,
+      "price": 228.23,
       "currency": "USD",
       "unit": "share",
-      "changePct": 2.299,
+      "changePct": 0.374,
       "vendor": "Yahoo Finance",
       "source": "yahoo:NVDA",
       "url": "https://finance.yahoo.com/quote/NVDA",
@@ -464,9 +464,10 @@
         213.89999389648438,
         219.33999633789062,
         222.27000427246094,
-        227.3800048828125
+        227.3800048828125,
+        228.22999572753906
       ],
-      "asOf": "2026-09-21T20:00:00.000Z"
+      "asOf": "2026-09-22T15:01:19.000Z"
     },
     {
       "kind": "gpu",
@@ -497,7 +498,7 @@
       "source": "apple:refurb",
       "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
       "note": "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
-      "asOf": "2026-09-22T10:05:09.988Z"
+      "asOf": "2026-09-22T15:01:23.112Z"
     },
     {
       "kind": "macmini",
@@ -509,7 +510,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-09-22T10:05:09.988Z"
+      "asOf": "2026-09-22T15:01:23.112Z"
     },
     {
       "kind": "macmini",
@@ -521,15 +522,15 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-09-22T10:05:09.988Z"
+      "asOf": "2026-09-22T15:01:23.112Z"
     },
     {
       "kind": "macmini",
       "title": "AAPL (Apple hardware proxy)",
-      "price": 338.98,
+      "price": 342.775,
       "currency": "USD",
       "unit": "share",
-      "changePct": 0.848,
+      "changePct": 1.12,
       "vendor": "Yahoo Finance",
       "source": "yahoo:AAPL",
       "url": "https://finance.yahoo.com/quote/AAPL",
@@ -554,9 +555,10 @@
         332.4100036621094,
         337,
         336.1300048828125,
-        338.9800109863281
+        338.9800109863281,
+        342.77508544921875
       ],
-      "asOf": "2026-09-21T20:00:01.000Z"
+      "asOf": "2026-09-22T15:01:18.000Z"
     }
   ],
   "warnings": [
