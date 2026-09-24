@@ -1,13 +1,13 @@
 {
-  "asOf": "2026-09-24T20:35:55.874Z",
+  "asOf": "2026-09-24T23:33:30.979Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4301.7,
+      "price": 4308.8,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.387,
+      "changePct": 0.251,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
@@ -34,24 +34,24 @@
         4383.89990234375,
         4376.39990234375,
         4318.39990234375,
-        4301.7001953125
+        4308.7998046875
       ],
-      "asOf": "2026-09-24T20:25:48.000Z",
+      "asOf": "2026-09-24T23:23:23.000Z",
       "extra": {
-        "usdCny": 6.70468406,
-        "cnyPerGramApprox": 927.28
+        "usdCny": 6.71434655,
+        "cnyPerGramApprox": 930.15
       }
     },
     {
       "kind": "gold",
       "title": "Gold spot XAU/USD",
-      "price": 4268,
+      "price": 4274.200195,
       "currency": "USD",
       "unit": "oz",
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-09-24T20:35:26Z",
+      "asOf": "2026-09-24T23:33:27Z",
       "spark": [
         4697.7998046875,
         4694.5,
@@ -75,28 +75,28 @@
         4383.89990234375,
         4376.39990234375,
         4318.39990234375,
-        4301.7001953125
+        4308.7998046875
       ],
       "extra": {
-        "usdCny": 6.70468406,
-        "cnyPerGramApprox": 920.01
+        "usdCny": 6.71434655,
+        "cnyPerGramApprox": 922.68
       }
     },
     {
       "kind": "gold",
       "title": "Gold spot (derived from USD/XAU)",
-      "price": 4346.54,
+      "price": 4284.18,
       "currency": "USD",
       "unit": "oz",
       "vendor": "fawazahmed0/exchange-api",
       "source": "currency-api:usd.xau",
       "url": "https://github.com/fawazahmed0/exchange-api",
       "extra": {
-        "usdCny": 6.70468406,
-        "cnyPerGramApprox": 936.94
+        "usdCny": 6.71434655,
+        "cnyPerGramApprox": 924.83
       },
       "note": "Daily FX table, not tick-level COMEX.",
-      "asOf": "2026-09-23T00:00:00.000Z",
+      "asOf": "2026-09-24T00:00:00.000Z",
       "spark": [
         4697.7998046875,
         4694.5,
@@ -120,16 +120,16 @@
         4383.89990234375,
         4376.39990234375,
         4318.39990234375,
-        4301.7001953125
+        4308.7998046875
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4260.21,
+      "price": 4264.58,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.5025607661237531,
+      "changePct": -0.4819644808130014,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -164,13 +164,13 @@
         4364.464388537871,
         4359.381939875312,
         4287.231567219998,
-        4260.209267448495
+        4265.489313586481
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-09-24T20:35:53.417Z",
+      "asOf": "2026-09-24T23:33:28.441Z",
       "extra": {
-        "usdCny": 6.70468406,
-        "cnyPerGramApprox": 918.33
+        "usdCny": 6.71434655,
+        "cnyPerGramApprox": 920.6
       }
     }
   ],
@@ -357,7 +357,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-09-24T20:35:53.836Z"
+      "asOf": "2026-09-24T23:33:28.931Z"
     },
     {
       "kind": "gpu",
@@ -373,7 +373,7 @@
         "vram": 16,
         "watchModel": "RTX5080"
       },
-      "asOf": "2026-09-24T20:35:53.836Z"
+      "asOf": "2026-09-24T23:33:28.931Z"
     },
     {
       "kind": "gpu",
@@ -389,7 +389,7 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-09-24T20:35:53.836Z"
+      "asOf": "2026-09-24T23:33:28.931Z"
     },
     {
       "kind": "gpu",
@@ -405,7 +405,23 @@
         "vram": 94,
         "watchModel": "H100"
       },
-      "asOf": "2026-09-24T20:35:53.836Z"
+      "asOf": "2026-09-24T23:33:28.931Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "B200 cloud rental · RunPod",
+      "price": 5.98,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 180,
+        "watchModel": "B200"
+      },
+      "asOf": "2026-09-24T23:33:28.932Z"
     },
     {
       "kind": "gpu",
@@ -421,7 +437,7 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-09-24T20:35:53.836Z"
+      "asOf": "2026-09-24T23:33:28.932Z"
     },
     {
       "kind": "gpu",
@@ -437,7 +453,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-09-24T20:35:53.836Z"
+      "asOf": "2026-09-24T23:33:28.932Z"
     },
     {
       "kind": "gpu",
@@ -475,23 +491,6 @@
         224.5800018310547
       ],
       "asOf": "2026-09-24T20:00:01.000Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "B200 cloud rental · RunPod",
-      "price": 5.98,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 180,
-        "watchModel": "B200",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
     }
   ],
   "macmini": [
@@ -508,7 +507,7 @@
       "extra": {
         "sku": "FU9E3LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -523,7 +522,7 @@
       "extra": {
         "sku": "G1CF0LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -538,7 +537,7 @@
       "extra": {
         "sku": "G1CF7LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -553,7 +552,7 @@
       "extra": {
         "sku": "G1CG0LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -568,7 +567,7 @@
       "extra": {
         "sku": "G1KZQLL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -583,7 +582,7 @@
       "extra": {
         "sku": "G1CG2LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -598,22 +597,7 @@
       "extra": {
         "sku": "G1KZALL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
-    },
-    {
-      "kind": "macmini",
-      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
-      "price": "1699.00",
-      "currency": "USD",
-      "unit": "unit",
-      "inStock": true,
-      "vendor": "Apple Certified Refurbished",
-      "source": "apple:bootstrap",
-      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
-      "extra": {
-        "sku": "G1CG3LL/A"
-      },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -628,22 +612,7 @@
       "extra": {
         "sku": "G1KZCLL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
-    },
-    {
-      "kind": "macmini",
-      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, Gigabit Ethernet ",
-      "price": "2039.00",
-      "currency": "USD",
-      "unit": "unit",
-      "inStock": true,
-      "vendor": "Apple Certified Refurbished",
-      "source": "apple:bootstrap",
-      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
-      "extra": {
-        "sku": "G1KZHLL/A"
-      },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -658,7 +627,7 @@
       "extra": {
         "sku": "G1JV1LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -673,7 +642,7 @@
       "extra": {
         "sku": "G1JV7LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -688,7 +657,7 @@
       "extra": {
         "sku": "G1JV8LL/A"
       },
-      "asOf": "2026-09-24T20:35:53.465Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -700,7 +669,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-09-24T20:35:53.531Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
@@ -712,7 +681,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-09-24T20:35:53.531Z"
+      "asOf": "2026-09-24T23:33:28.754Z"
     },
     {
       "kind": "macmini",
