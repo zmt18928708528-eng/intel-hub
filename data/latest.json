@@ -1,18 +1,17 @@
 {
-  "asOf": "2026-09-28T23:58:37.064Z",
+  "asOf": "2026-09-29T05:52:15.362Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4155.7,
+      "price": 4165.3,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.305,
+      "changePct": -0.074,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
       "spark": [
-        4529.89990234375,
         4481.5,
         4396.39990234375,
         4414.60009765625,
@@ -32,26 +31,26 @@
         4318.39990234375,
         4298,
         4321.2001953125,
-        4155.7001953125
+        4168.39990234375,
+        4165.2998046875
       ],
-      "asOf": "2026-09-28T23:48:26.000Z",
+      "asOf": "2026-09-29T05:42:07.000Z",
       "extra": {
         "usdCny": 6.71348008,
-        "cnyPerGramApprox": 896.98
+        "cnyPerGramApprox": 899.05
       }
     },
     {
       "kind": "gold",
       "title": "Gold spot XAU/USD",
-      "price": 4127.100098,
+      "price": 4138.600098,
       "currency": "USD",
       "unit": "oz",
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-09-28T23:58:07Z",
+      "asOf": "2026-09-29T05:52:07Z",
       "spark": [
-        4529.89990234375,
         4481.5,
         4396.39990234375,
         4414.60009765625,
@@ -71,11 +70,12 @@
         4318.39990234375,
         4298,
         4321.2001953125,
-        4155.7001953125
+        4168.39990234375,
+        4165.2998046875
       ],
       "extra": {
         "usdCny": 6.71348008,
-        "cnyPerGramApprox": 890.81
+        "cnyPerGramApprox": 893.29
       }
     },
     {
@@ -94,7 +94,6 @@
       "note": "Daily FX table, not tick-level COMEX.",
       "asOf": "2026-09-28T00:00:00.000Z",
       "spark": [
-        4529.89990234375,
         4481.5,
         4396.39990234375,
         4414.60009765625,
@@ -114,21 +113,21 @@
         4318.39990234375,
         4298,
         4321.2001953125,
-        4155.7001953125
+        4168.39990234375,
+        4165.2998046875
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4135.21,
+      "price": 4146.8,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -2.8866134258797196,
+      "changePct": -0.9345217092995952,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
       "spark": [
-        4464.590968574843,
         4453.408770694456,
         4450.439448125702,
         4336.461084182155,
@@ -158,13 +157,14 @@
         4281.559777579503,
         4279.632165424284,
         4257.322954800938,
-        4135.031649085464
+        4137.622905560268,
+        4147.100336239071
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-09-28T23:58:34.419Z",
+      "asOf": "2026-09-29T05:52:11.723Z",
       "extra": {
         "usdCny": 6.71348008,
-        "cnyPerGramApprox": 892.56
+        "cnyPerGramApprox": 895.06
       }
     }
   ],
@@ -339,8 +339,8 @@
     },
     {
       "kind": "gpu",
-      "title": "RTX 4090 cloud rental · RunPod",
-      "price": 0.34,
+      "title": "H100 PCIe cloud rental · RunPod",
+      "price": 1.99,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -348,26 +348,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 24,
-        "watchModel": "RTX4090"
-      },
-      "asOf": "2026-09-28T23:58:34.697Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "H100 NVL cloud rental · RunPod",
-      "price": 2.59,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 94,
+        "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-09-28T23:58:34.697Z"
+      "asOf": "2026-09-29T05:52:12.386Z"
     },
     {
       "kind": "gpu",
@@ -383,12 +367,12 @@
         "vram": 180,
         "watchModel": "B200"
       },
-      "asOf": "2026-09-28T23:58:34.697Z"
+      "asOf": "2026-09-29T05:52:12.386Z"
     },
     {
       "kind": "gpu",
-      "title": "A100 PCIe cloud rental · RunPod",
-      "price": 1.19,
+      "title": "A100 SXM 40GB cloud rental · RunPod",
+      "price": 1,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -396,26 +380,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 80,
+        "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-09-28T23:58:34.698Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "RTX 6000 Ada cloud rental · RunPod",
-      "price": 0.74,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 48,
-        "watchModel": "RTX6000"
-      },
-      "asOf": "2026-09-28T23:58:34.698Z"
+      "asOf": "2026-09-29T05:52:12.386Z"
     },
     {
       "kind": "gpu",
@@ -485,20 +453,417 @@
         "fromSnapshot": true
       },
       "asOf": "2026-09-13T10:55:05.227Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "RTX 4090 cloud rental · RunPod",
+      "price": 0.34,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 24,
+        "watchModel": "RTX4090",
+        "fromSnapshot": true
+      },
+      "asOf": "2026-09-13T10:55:05.227Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "RTX 6000 Ada cloud rental · RunPod",
+      "price": 0.74,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 48,
+        "watchModel": "RTX6000",
+        "fromSnapshot": true
+      },
+      "asOf": "2026-09-13T10:55:05.227Z"
     }
   ],
   "macmini": [
     {
       "kind": "macmini",
-      "title": "Refurbished Mac mini inventory",
-      "price": null,
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "679.00",
       "currency": "USD",
-      "inStock": false,
-      "vendor": "Apple",
-      "source": "apple:refurb",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
       "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
-      "note": "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
-      "asOf": "2026-09-28T23:58:34.503Z"
+      "extra": {
+        "sku": "FU9D3LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "849.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "FU9E3LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "849.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1CF9LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "1019.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "FCYT4LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, 10Gb Ethernet ",
+      "price": "1099.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1CF1LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "1099.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1CF7LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "1269.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1CG1LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, Gigabit Ethernet ",
+      "price": "1359.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "FCX44LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, 10Gb Ethernet ",
+      "price": "1359.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JX0LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, 10Gb Ethernet ",
+      "price": "1439.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1KZKLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "1529.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1CF8LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, Gigabit Ethernet ",
+      "price": "1609.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1KZALL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
+      "price": "1699.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1CG3LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, 10Gb Ethernet ",
+      "price": "1699.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JV0LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 14-Core CPU and 20-Core GPU, 10Gb Ethernet ",
+      "price": "1869.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JV6LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 14-Core CPU and 20-Core GPU, Gigabit Ethernet ",
+      "price": "2039.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1KZCLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, Gigabit Ethernet ",
+      "price": "2039.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1KZHLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, Gigabit Ethernet ",
+      "price": "2119.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JV1LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 14-Core CPU and 20-Core GPU, 10Gb Ethernet ",
+      "price": "2119.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1KZDLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 14-Core CPU and 20-Core GPU, Gigabit Ethernet ",
+      "price": "2289.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JV7LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 14-Core CPU and 20-Core GPU, 10Gb Ethernet ",
+      "price": "2379.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JV8LL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, Gigabit Ethernet ",
+      "price": "2549.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JVCLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 14-Core CPU and 20-Core GPU, 10Gb Ethernet ",
+      "price": "2799.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JVKLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, 10Gb Ethernet ",
+      "price": "2969.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JVNLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini Apple M4 Pro Chip with 14-Core CPU and 20-Core GPU, 10Gb Ethernet ",
+      "price": "3649.00",
+      "currency": "USD",
+      "unit": "unit",
+      "inStock": true,
+      "vendor": "Apple Certified Refurbished",
+      "source": "apple:bootstrap",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "extra": {
+        "sku": "G1JVWLL/A"
+      },
+      "asOf": "2026-09-29T05:52:12.090Z"
     },
     {
       "kind": "macmini",
@@ -510,7 +875,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-09-28T23:58:34.503Z"
+      "asOf": "2026-09-29T05:52:12.090Z"
     },
     {
       "kind": "macmini",
@@ -522,7 +887,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-09-28T23:58:34.503Z"
+      "asOf": "2026-09-29T05:52:12.090Z"
     },
     {
       "kind": "macmini",
@@ -558,9 +923,22 @@
         338.3999938964844
       ],
       "asOf": "2026-09-28T20:00:01.000Z"
+    },
+    {
+      "kind": "macmini",
+      "title": "Refurbished Mac mini inventory",
+      "price": null,
+      "currency": "USD",
+      "inStock": false,
+      "vendor": "Apple",
+      "source": "apple:refurb",
+      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
+      "note": "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
+      "asOf": "2026-09-13T10:55:05.045Z",
+      "extra": {
+        "fromSnapshot": true
+      }
     }
   ],
-  "warnings": [
-    "Apple 翻新页当前没有 Mac mini 在售（缺货时很常见）。"
-  ]
+  "warnings": []
 }
