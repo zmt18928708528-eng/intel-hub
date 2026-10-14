@@ -1,13 +1,13 @@
 {
-  "asOf": "2026-10-14T00:38:57.555Z",
+  "asOf": "2026-10-14T05:30:25.995Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4183.8,
+      "price": 4185.1,
       "currency": "USD",
       "unit": "oz",
-      "changePct": 0.156,
+      "changePct": 0.187,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
@@ -33,24 +33,25 @@
         4157,
         4216.2998046875,
         4190.60009765625,
-        4183.7998046875
+        4177.2998046875,
+        4185.10009765625
       ],
-      "asOf": "2026-10-14T00:28:46.000Z",
+      "asOf": "2026-10-14T05:20:19.000Z",
       "extra": {
         "usdCny": 6.69575817,
-        "cnyPerGramApprox": 900.66
+        "cnyPerGramApprox": 900.94
       }
     },
     {
       "kind": "gold",
       "title": "Gold spot XAU/USD",
-      "price": 4160.899902,
+      "price": 4158.799805,
       "currency": "USD",
       "unit": "oz",
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-10-14T00:38:45Z",
+      "asOf": "2026-10-14T05:30:19Z",
       "spark": [
         4351.89990234375,
         4332.7998046875,
@@ -73,11 +74,12 @@
         4157,
         4216.2998046875,
         4190.60009765625,
-        4183.7998046875
+        4177.2998046875,
+        4185.10009765625
       ],
       "extra": {
         "usdCny": 6.69575817,
-        "cnyPerGramApprox": 895.73
+        "cnyPerGramApprox": 895.28
       }
     },
     {
@@ -117,16 +119,17 @@
         4157,
         4216.2998046875,
         4190.60009765625,
-        4183.7998046875
+        4177.2998046875,
+        4185.10009765625
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4161.53,
+      "price": 4160.45,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.018907209014506876,
+      "changePct": -0.7650129561485073,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -161,13 +164,13 @@
         4185.876389236558,
         4168.602555940398,
         4157.209770763024,
-        4161.431209439782
+        4160.448481835637
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-10-14T00:38:57.013Z",
+      "asOf": "2026-10-14T05:30:22.467Z",
       "extra": {
         "usdCny": 6.69575817,
-        "cnyPerGramApprox": 895.87
+        "cnyPerGramApprox": 895.64
       }
     }
   ],
@@ -354,7 +357,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-10-14T00:38:57.300Z"
+      "asOf": "2026-10-14T05:30:22.693Z"
     },
     {
       "kind": "gpu",
@@ -370,7 +373,7 @@
         "vram": 16,
         "watchModel": "RTX5080"
       },
-      "asOf": "2026-10-14T00:38:57.301Z"
+      "asOf": "2026-10-14T05:30:22.693Z"
     },
     {
       "kind": "gpu",
@@ -386,7 +389,7 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-10-14T00:38:57.301Z"
+      "asOf": "2026-10-14T05:30:22.693Z"
     },
     {
       "kind": "gpu",
@@ -402,7 +405,7 @@
         "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-10-14T00:38:57.301Z"
+      "asOf": "2026-10-14T05:30:22.693Z"
     },
     {
       "kind": "gpu",
@@ -418,12 +421,12 @@
         "vram": 180,
         "watchModel": "B200"
       },
-      "asOf": "2026-10-14T00:38:57.301Z"
+      "asOf": "2026-10-14T05:30:22.693Z"
     },
     {
       "kind": "gpu",
-      "title": "A100 SXM 40GB cloud rental · RunPod",
-      "price": 1,
+      "title": "A100 PCIe cloud rental · RunPod",
+      "price": 1.19,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -431,10 +434,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 40,
+        "vram": 80,
         "watchModel": "A100"
       },
-      "asOf": "2026-10-14T00:38:57.301Z"
+      "asOf": "2026-10-14T05:30:22.693Z"
     },
     {
       "kind": "gpu",
@@ -450,7 +453,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-10-14T00:38:57.301Z"
+      "asOf": "2026-10-14T05:30:22.693Z"
     },
     {
       "kind": "gpu",
@@ -484,7 +487,8 @@
         237.47000122070312,
         230.47999572753906,
         229.27999877929688,
-        226.32000732421875
+        226.32000732421875,
+        228.52000427246094
       ],
       "asOf": "2026-10-13T20:00:00.000Z"
     }
@@ -500,7 +504,7 @@
       "source": "apple:refurb",
       "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
       "note": "Watch the official refurb URL, or fork saadiq/refurb-mini-spy.",
-      "asOf": "2026-10-14T00:38:57.135Z"
+      "asOf": "2026-10-14T05:30:22.446Z"
     },
     {
       "kind": "macmini",
@@ -512,7 +516,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-10-14T00:38:57.135Z"
+      "asOf": "2026-10-14T05:30:22.446Z"
     },
     {
       "kind": "macmini",
@@ -524,7 +528,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-10-14T00:38:57.135Z"
+      "asOf": "2026-10-14T05:30:22.446Z"
     },
     {
       "kind": "macmini",
@@ -558,7 +562,8 @@
         336.6700134277344,
         340.4200134277344,
         336.6400146484375,
-        340.9700012207031
+        340.9700012207031,
+        341.2699890136719
       ],
       "asOf": "2026-10-13T20:00:01.000Z"
     }
