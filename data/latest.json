@@ -1,18 +1,17 @@
 {
-  "asOf": "2026-10-23T01:02:36.027Z",
+  "asOf": "2026-10-23T06:05:27.852Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4042.8,
+      "price": 4034.7,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.433,
+      "changePct": -0.633,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
       "spark": [
-        4376.39990234375,
         4318.39990234375,
         4298,
         4321.2001953125,
@@ -34,26 +33,26 @@
         4160.10009765625,
         4142.60009765625,
         4150,
-        4042.800048828125
+        4060.39990234375,
+        4034.699951171875
       ],
-      "asOf": "2026-10-23T00:52:13.000Z",
+      "asOf": "2026-10-23T05:55:21.000Z",
       "extra": {
         "usdCny": 6.67476008,
-        "cnyPerGramApprox": 867.58
+        "cnyPerGramApprox": 865.84
       }
     },
     {
       "kind": "gold",
       "title": "Gold spot XAU/USD",
-      "price": 4026.699951,
+      "price": 4021,
       "currency": "USD",
       "unit": "oz",
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-10-23T01:02:12Z",
+      "asOf": "2026-10-23T06:05:12Z",
       "spark": [
-        4376.39990234375,
         4318.39990234375,
         4298,
         4321.2001953125,
@@ -75,11 +74,12 @@
         4160.10009765625,
         4142.60009765625,
         4150,
-        4042.800048828125
+        4060.39990234375,
+        4034.699951171875
       ],
       "extra": {
         "usdCny": 6.67476008,
-        "cnyPerGramApprox": 864.12
+        "cnyPerGramApprox": 862.9
       }
     },
     {
@@ -98,7 +98,6 @@
       "note": "Daily FX table, not tick-level COMEX.",
       "asOf": "2026-10-22T00:00:00.000Z",
       "spark": [
-        4376.39990234375,
         4318.39990234375,
         4298,
         4321.2001953125,
@@ -120,16 +119,17 @@
         4160.10009765625,
         4142.60009765625,
         4150,
-        4042.800048828125
+        4060.39990234375,
+        4034.699951171875
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4037.85,
+      "price": 4030.09,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -1.906141743797929,
+      "changePct": -1.653374356744321,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -164,13 +164,13 @@
         4119.458917201877,
         4124.597548329851,
         4031.635797553147,
-        4034.519636955076
+        4029.991100864664
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-10-23T01:02:33.433Z",
+      "asOf": "2026-10-23T06:05:24.251Z",
       "extra": {
         "usdCny": 6.67476008,
-        "cnyPerGramApprox": 866.52
+        "cnyPerGramApprox": 864.85
       }
     }
   ],
@@ -357,7 +357,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-10-23T01:02:33.912Z"
+      "asOf": "2026-10-23T06:05:24.621Z"
     },
     {
       "kind": "gpu",
@@ -373,7 +373,7 @@
         "vram": 16,
         "watchModel": "RTX5080"
       },
-      "asOf": "2026-10-23T01:02:33.912Z"
+      "asOf": "2026-10-23T06:05:24.621Z"
     },
     {
       "kind": "gpu",
@@ -389,12 +389,12 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-10-23T01:02:33.912Z"
+      "asOf": "2026-10-23T06:05:24.622Z"
     },
     {
       "kind": "gpu",
-      "title": "H100 NVL cloud rental · RunPod",
-      "price": 2.59,
+      "title": "H100 SXM cloud rental · RunPod",
+      "price": 2.69,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -402,10 +402,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 94,
+        "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-10-23T01:02:33.912Z"
+      "asOf": "2026-10-23T06:05:24.622Z"
     },
     {
       "kind": "gpu",
@@ -421,12 +421,12 @@
         "vram": 180,
         "watchModel": "B200"
       },
-      "asOf": "2026-10-23T01:02:33.912Z"
+      "asOf": "2026-10-23T06:05:24.622Z"
     },
     {
       "kind": "gpu",
-      "title": "A100 PCIe cloud rental · RunPod",
-      "price": 1.19,
+      "title": "A100 SXM 40GB cloud rental · RunPod",
+      "price": 1,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -434,10 +434,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 80,
+        "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-10-23T01:02:33.912Z"
+      "asOf": "2026-10-23T06:05:24.622Z"
     },
     {
       "kind": "gpu",
@@ -453,7 +453,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-10-23T01:02:33.912Z"
+      "asOf": "2026-10-23T06:05:24.622Z"
     },
     {
       "kind": "gpu",
@@ -487,7 +487,8 @@
         214.1300048828125,
         217.08999633789062,
         216.47000122070312,
-        221.97000122070312
+        221.97000122070312,
+        212.2100067138672
       ],
       "asOf": "2026-10-22T20:00:00.000Z"
     }
@@ -506,7 +507,7 @@
       "extra": {
         "sku": "G1CF0LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -521,7 +522,7 @@
       "extra": {
         "sku": "FCYT4LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -536,7 +537,7 @@
       "extra": {
         "sku": "G1CF1LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -551,7 +552,7 @@
       "extra": {
         "sku": "G1CF7LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -566,7 +567,7 @@
       "extra": {
         "sku": "G1CG0LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -581,7 +582,7 @@
       "extra": {
         "sku": "FCX44LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -596,7 +597,7 @@
       "extra": {
         "sku": "G1CF8LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -611,7 +612,7 @@
       "extra": {
         "sku": "G1CG3LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -626,7 +627,7 @@
       "extra": {
         "sku": "G1JV5LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -641,7 +642,7 @@
       "extra": {
         "sku": "G1JX3LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -656,7 +657,7 @@
       "extra": {
         "sku": "G1JV6LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -671,7 +672,7 @@
       "extra": {
         "sku": "G1KZHLL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -686,7 +687,7 @@
       "extra": {
         "sku": "G1JVBLL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -701,7 +702,7 @@
       "extra": {
         "sku": "G1JV2LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -716,7 +717,7 @@
       "extra": {
         "sku": "G1JV7LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -731,7 +732,7 @@
       "extra": {
         "sku": "G1JV8LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -746,7 +747,7 @@
       "extra": {
         "sku": "G1JVJLL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -761,7 +762,7 @@
       "extra": {
         "sku": "G1JVKLL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -776,7 +777,7 @@
       "extra": {
         "sku": "G1JVVLL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -791,7 +792,7 @@
       "extra": {
         "sku": "G1KZ6LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -806,7 +807,7 @@
       "extra": {
         "sku": "G1KZ9LL/A"
       },
-      "asOf": "2026-10-23T01:02:33.480Z"
+      "asOf": "2026-10-23T06:05:24.305Z"
     },
     {
       "kind": "macmini",
@@ -818,7 +819,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-10-23T01:02:33.526Z"
+      "asOf": "2026-10-23T06:05:24.306Z"
     },
     {
       "kind": "macmini",
@@ -830,7 +831,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-10-23T01:02:33.526Z"
+      "asOf": "2026-10-23T06:05:24.306Z"
     },
     {
       "kind": "macmini",
@@ -864,7 +865,8 @@
         343.4599914550781,
         342.94000244140625,
         339.5,
-        343.989990234375
+        343.989990234375,
+        348.2200012207031
       ],
       "asOf": "2026-10-22T20:00:01.000Z"
     },
