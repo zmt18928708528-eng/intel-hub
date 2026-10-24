@@ -1,18 +1,17 @@
 {
-  "asOf": "2026-10-24T01:41:58.137Z",
+  "asOf": "2026-10-24T06:33:14.245Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4010,
+      "price": 4007.9,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -1.241,
+      "changePct": -1.293,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
       "spark": [
-        4318.39990234375,
         4298,
         4321.2001953125,
         4168.39990234375,
@@ -34,12 +33,12 @@
         4142.60009765625,
         4150,
         4060.39990234375,
-        4010
+        4007.89990234375
       ],
       "asOf": "2026-10-23T20:59:58.000Z",
       "extra": {
         "usdCny": 6.67320177,
-        "cnyPerGramApprox": 860.34
+        "cnyPerGramApprox": 859.89
       }
     },
     {
@@ -51,9 +50,8 @@
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-10-24T01:41:46Z",
+      "asOf": "2026-10-24T06:32:52Z",
       "spark": [
-        4318.39990234375,
         4298,
         4321.2001953125,
         4168.39990234375,
@@ -75,7 +73,7 @@
         4142.60009765625,
         4150,
         4060.39990234375,
-        4010
+        4007.89990234375
       ],
       "extra": {
         "usdCny": 6.67320177,
@@ -98,7 +96,6 @@
       "note": "Daily FX table, not tick-level COMEX.",
       "asOf": "2026-10-23T00:00:00.000Z",
       "spark": [
-        4318.39990234375,
         4298,
         4321.2001953125,
         4168.39990234375,
@@ -120,16 +117,16 @@
         4142.60009765625,
         4150,
         4060.39990234375,
-        4010
+        4007.89990234375
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 3997.58,
+      "price": 4003.63,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.584676749137949,
+      "changePct": -0.5454028154615221,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -164,13 +161,13 @@
         4124.597548329851,
         4031.635797553147,
         3999.854986741276,
-        3997.60621779776
+        4003.3602016426225
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-10-24T01:41:55.745Z",
+      "asOf": "2026-10-24T06:33:11.795Z",
       "extra": {
         "usdCny": 6.67320177,
-        "cnyPerGramApprox": 857.67
+        "cnyPerGramApprox": 858.97
       }
     }
   ],
@@ -357,28 +354,12 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-10-24T01:41:56.127Z"
+      "asOf": "2026-10-24T06:33:12.114Z"
     },
     {
       "kind": "gpu",
-      "title": "RTX 4090 cloud rental · RunPod",
-      "price": 0.34,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 24,
-        "watchModel": "RTX4090"
-      },
-      "asOf": "2026-10-24T01:41:56.127Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "H100 PCIe cloud rental · RunPod",
-      "price": 1.99,
+      "title": "H100 SXM cloud rental · RunPod",
+      "price": 2.69,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -389,7 +370,7 @@
         "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-10-24T01:41:56.127Z"
+      "asOf": "2026-10-24T06:33:12.114Z"
     },
     {
       "kind": "gpu",
@@ -405,7 +386,7 @@
         "vram": 180,
         "watchModel": "B200"
       },
-      "asOf": "2026-10-24T01:41:56.127Z"
+      "asOf": "2026-10-24T06:33:12.114Z"
     },
     {
       "kind": "gpu",
@@ -421,7 +402,7 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-10-24T01:41:56.128Z"
+      "asOf": "2026-10-24T06:33:12.114Z"
     },
     {
       "kind": "gpu",
@@ -437,7 +418,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-10-24T01:41:56.128Z"
+      "asOf": "2026-10-24T06:33:12.114Z"
     },
     {
       "kind": "gpu",
@@ -492,6 +473,23 @@
         "fromSnapshot": true
       },
       "asOf": "2026-09-13T10:55:05.227Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "RTX 4090 cloud rental · RunPod",
+      "price": 0.34,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 24,
+        "watchModel": "RTX4090",
+        "fromSnapshot": true
+      },
+      "asOf": "2026-09-13T10:55:05.227Z"
     }
   ],
   "macmini": [
@@ -508,7 +506,7 @@
       "extra": {
         "sku": "G1CF7LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -523,7 +521,7 @@
       "extra": {
         "sku": "FCX44LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -538,7 +536,7 @@
       "extra": {
         "sku": "G1CG3LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -553,7 +551,7 @@
       "extra": {
         "sku": "G1JV5LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -568,7 +566,7 @@
       "extra": {
         "sku": "G1JX3LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -583,7 +581,7 @@
       "extra": {
         "sku": "G1JV6LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -598,7 +596,7 @@
       "extra": {
         "sku": "G1JVBLL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -613,7 +611,7 @@
       "extra": {
         "sku": "G1JV7LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -628,7 +626,7 @@
       "extra": {
         "sku": "G1JV8LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -643,7 +641,7 @@
       "extra": {
         "sku": "G1JVJLL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -658,7 +656,7 @@
       "extra": {
         "sku": "G1JVKLL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -673,7 +671,7 @@
       "extra": {
         "sku": "G1JVVLL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -688,7 +686,7 @@
       "extra": {
         "sku": "G1KZ6LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -703,7 +701,7 @@
       "extra": {
         "sku": "G1KZ9LL/A"
       },
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.836Z"
     },
     {
       "kind": "macmini",
@@ -715,7 +713,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.857Z"
     },
     {
       "kind": "macmini",
@@ -727,7 +725,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-10-24T01:41:55.922Z"
+      "asOf": "2026-10-24T06:33:11.857Z"
     },
     {
       "kind": "macmini",
