@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-24T23:22:39.099Z",
+  "asOf": "2026-10-25T01:46:49.221Z",
   "gold": [
     {
       "kind": "gold",
@@ -50,7 +50,7 @@
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-10-24T23:22:23Z",
+      "asOf": "2026-10-25T01:46:37Z",
       "spark": [
         4298,
         4321.2001953125,
@@ -123,15 +123,14 @@
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 3999.95,
+      "price": 3998.68,
       "currency": "USD",
       "unit": "oz",
-      "changePct": 0.026301460811067427,
+      "changePct": 0.016196795823592243,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
       "spark": [
-        4259.105477343174,
         4281.559777579503,
         4279.632165424284,
         4257.322954800938,
@@ -161,13 +160,14 @@
         4124.597548329851,
         4031.635797553147,
         3999.854986741276,
-        4000.1089698409705
+        4000.2110997088052,
+        3998.6848750054833
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-10-24T23:22:36.442Z",
+      "asOf": "2026-10-25T01:46:47.207Z",
       "extra": {
         "usdCny": 6.672491,
-        "cnyPerGramApprox": 858.09
+        "cnyPerGramApprox": 857.82
       }
     }
   ],
@@ -354,7 +354,23 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-10-24T23:22:36.760Z"
+      "asOf": "2026-10-25T01:46:47.628Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "RTX 5080 cloud rental · RunPod",
+      "price": 0.39,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 16,
+        "watchModel": "RTX5080"
+      },
+      "asOf": "2026-10-25T01:46:47.628Z"
     },
     {
       "kind": "gpu",
@@ -370,7 +386,7 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-10-24T23:22:36.760Z"
+      "asOf": "2026-10-25T01:46:47.628Z"
     },
     {
       "kind": "gpu",
@@ -386,7 +402,7 @@
         "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-10-24T23:22:36.760Z"
+      "asOf": "2026-10-25T01:46:47.628Z"
     },
     {
       "kind": "gpu",
@@ -402,7 +418,7 @@
         "vram": 180,
         "watchModel": "B200"
       },
-      "asOf": "2026-10-24T23:22:36.761Z"
+      "asOf": "2026-10-25T01:46:47.628Z"
     },
     {
       "kind": "gpu",
@@ -418,7 +434,7 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-10-24T23:22:36.761Z"
+      "asOf": "2026-10-25T01:46:47.628Z"
     },
     {
       "kind": "gpu",
@@ -434,7 +450,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-10-24T23:22:36.761Z"
+      "asOf": "2026-10-25T01:46:47.628Z"
     },
     {
       "kind": "gpu",
@@ -472,23 +488,6 @@
         210.9600067138672
       ],
       "asOf": "2026-10-23T20:00:00.000Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "RTX 5080 cloud rental · RunPod",
-      "price": 0.39,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 16,
-        "watchModel": "RTX5080",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
     }
   ],
   "macmini": [
@@ -505,7 +504,7 @@
       "extra": {
         "sku": "FCX44LL/A"
       },
-      "asOf": "2026-10-24T23:22:36.675Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -520,7 +519,7 @@
       "extra": {
         "sku": "G1JV5LL/A"
       },
-      "asOf": "2026-10-24T23:22:36.675Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -535,7 +534,7 @@
       "extra": {
         "sku": "G1JX3LL/A"
       },
-      "asOf": "2026-10-24T23:22:36.675Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -550,22 +549,7 @@
       "extra": {
         "sku": "G1JV6LL/A"
       },
-      "asOf": "2026-10-24T23:22:36.676Z"
-    },
-    {
-      "kind": "macmini",
-      "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, 10Gb Ethernet ",
-      "price": "2119.00",
-      "currency": "USD",
-      "unit": "unit",
-      "inStock": true,
-      "vendor": "Apple Certified Refurbished",
-      "source": "apple:bootstrap",
-      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
-      "extra": {
-        "sku": "G1JVBLL/A"
-      },
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -580,7 +564,7 @@
       "extra": {
         "sku": "G1JV8LL/A"
       },
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -595,7 +579,7 @@
       "extra": {
         "sku": "G1JVKLL/A"
       },
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -610,7 +594,7 @@
       "extra": {
         "sku": "G1JVVLL/A"
       },
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -625,7 +609,7 @@
       "extra": {
         "sku": "G1KZ6LL/A"
       },
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -640,7 +624,7 @@
       "extra": {
         "sku": "G1KZ9LL/A"
       },
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.371Z"
     },
     {
       "kind": "macmini",
@@ -652,7 +636,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.397Z"
     },
     {
       "kind": "macmini",
@@ -664,7 +648,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-10-24T23:22:36.676Z"
+      "asOf": "2026-10-25T01:46:47.397Z"
     },
     {
       "kind": "macmini",
