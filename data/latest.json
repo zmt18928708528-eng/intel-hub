@@ -1,13 +1,13 @@
 {
-  "asOf": "2026-10-29T14:28:47.505Z",
+  "asOf": "2026-10-29T19:54:16.522Z",
   "gold": [
     {
       "kind": "gold",
       "title": "COMEX Gold futures",
-      "price": 4039,
+      "price": 4031,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.311,
+      "changePct": -0.508,
       "vendor": "Yahoo Finance",
       "source": "yahoo:GC=F",
       "url": "https://finance.yahoo.com/quote/GC%3DF",
@@ -34,24 +34,24 @@
         4038.39990234375,
         4074.60009765625,
         4051.60009765625,
-        4039
+        4031
       ],
-      "asOf": "2026-10-29T14:18:42.000Z",
+      "asOf": "2026-10-29T19:44:08.000Z",
       "extra": {
         "usdCny": 6.66229251,
-        "cnyPerGramApprox": 865.14
+        "cnyPerGramApprox": 863.43
       }
     },
     {
       "kind": "gold",
       "title": "Gold spot XAU/USD",
-      "price": 4028.800049,
+      "price": 4022.300049,
       "currency": "USD",
       "unit": "oz",
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-10-29T14:28:38Z",
+      "asOf": "2026-10-29T19:54:10Z",
       "spark": [
         4179.7001953125,
         4186.7001953125,
@@ -75,11 +75,11 @@
         4038.39990234375,
         4074.60009765625,
         4051.60009765625,
-        4039
+        4031
       ],
       "extra": {
         "usdCny": 6.66229251,
-        "cnyPerGramApprox": 862.96
+        "cnyPerGramApprox": 861.57
       }
     },
     {
@@ -120,16 +120,16 @@
         4038.39990234375,
         4074.60009765625,
         4051.60009765625,
-        4039
+        4031
       ]
     },
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4025.8,
+      "price": 4021.79,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.4120341772019656,
+      "changePct": -0.9907723062444465,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -164,13 +164,13 @@
         4011.9576248246353,
         4064.2140302557646,
         4051.04465178583,
-        4025.6057837341255
+        4021.5930158157926
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-10-29T14:28:45.895Z",
+      "asOf": "2026-10-29T19:54:14.243Z",
       "extra": {
         "usdCny": 6.66229251,
-        "cnyPerGramApprox": 862.32
+        "cnyPerGramApprox": 861.46
       }
     }
   ],
@@ -345,6 +345,38 @@
     },
     {
       "kind": "gpu",
+      "title": "RTX 5090 cloud rental · RunPod",
+      "price": 0.69,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 32,
+        "watchModel": "RTX5090"
+      },
+      "asOf": "2026-10-29T19:54:14.493Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "RTX 5080 cloud rental · RunPod",
+      "price": 0.39,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 16,
+        "watchModel": "RTX5080"
+      },
+      "asOf": "2026-10-29T19:54:14.493Z"
+    },
+    {
+      "kind": "gpu",
       "title": "RTX 4090 cloud rental · RunPod",
       "price": 0.34,
       "currency": "USD",
@@ -357,12 +389,12 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-10-29T14:28:46.230Z"
+      "asOf": "2026-10-29T19:54:14.493Z"
     },
     {
       "kind": "gpu",
-      "title": "H100 SXM cloud rental · RunPod",
-      "price": 2.69,
+      "title": "H100 NVL cloud rental · RunPod",
+      "price": 2.59,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -370,10 +402,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 80,
+        "vram": 94,
         "watchModel": "H100"
       },
-      "asOf": "2026-10-29T14:28:46.230Z"
+      "asOf": "2026-10-29T19:54:14.493Z"
     },
     {
       "kind": "gpu",
@@ -389,7 +421,7 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-10-29T14:28:46.231Z"
+      "asOf": "2026-10-29T19:54:14.493Z"
     },
     {
       "kind": "gpu",
@@ -405,15 +437,15 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-10-29T14:28:46.231Z"
+      "asOf": "2026-10-29T19:54:14.493Z"
     },
     {
       "kind": "gpu",
       "title": "NVDA (GPU market proxy)",
-      "price": 213.22,
+      "price": 213.3,
       "currency": "USD",
       "unit": "share",
-      "changePct": -1.003,
+      "changePct": -0.966,
       "vendor": "Yahoo Finance",
       "source": "yahoo:NVDA",
       "url": "https://finance.yahoo.com/quote/NVDA",
@@ -441,43 +473,9 @@
         216,
         217.94000244140625,
         215.3800048828125,
-        213.22000122070312
+        213.3000030517578
       ],
-      "asOf": "2026-10-29T14:28:45.000Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "RTX 5090 cloud rental · RunPod",
-      "price": 0.69,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 32,
-        "watchModel": "RTX5090",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "RTX 5080 cloud rental · RunPod",
-      "price": 0.39,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 16,
-        "watchModel": "RTX5080",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
+      "asOf": "2026-10-29T19:54:13.000Z"
     },
     {
       "kind": "gpu",
@@ -511,7 +509,7 @@
       "extra": {
         "sku": "G1JVVLL/A"
       },
-      "asOf": "2026-10-29T14:28:45.827Z"
+      "asOf": "2026-10-29T19:54:14.318Z"
     },
     {
       "kind": "macmini",
@@ -523,7 +521,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-10-29T14:28:45.906Z"
+      "asOf": "2026-10-29T19:54:14.319Z"
     },
     {
       "kind": "macmini",
@@ -535,15 +533,15 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-10-29T14:28:45.906Z"
+      "asOf": "2026-10-29T19:54:14.319Z"
     },
     {
       "kind": "macmini",
       "title": "AAPL (Apple hardware proxy)",
-      "price": 349.86,
+      "price": 349.06,
       "currency": "USD",
       "unit": "share",
-      "changePct": 1.754,
+      "changePct": 1.521,
       "vendor": "Yahoo Finance",
       "source": "yahoo:AAPL",
       "url": "https://finance.yahoo.com/quote/AAPL",
@@ -571,9 +569,9 @@
         343.9100036621094,
         347.1000061035156,
         343.8299865722656,
-        349.8599853515625
+        349.05999755859375
       ],
-      "asOf": "2026-10-29T14:28:45.000Z"
+      "asOf": "2026-10-29T19:54:13.000Z"
     },
     {
       "kind": "macmini",
