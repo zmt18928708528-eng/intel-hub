@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-30T22:41:08.819Z",
+  "asOf": "2026-10-31T01:52:50.610Z",
   "gold": [
     {
       "kind": "gold",
@@ -51,7 +51,7 @@
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-10-30T22:40:44Z",
+      "asOf": "2026-10-31T01:52:26Z",
       "spark": [
         4186.7001953125,
         4202.2998046875,
@@ -126,15 +126,14 @@
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 3898.07,
+      "price": 3899.22,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -3.033336469209607,
+      "changePct": -2.452696422038008,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
       "spark": [
-        4162.846162289157,
         4190.280957868353,
         4151.899194997505,
         4147.316848401214,
@@ -164,13 +163,14 @@
         4064.2140302557646,
         4051.04465178583,
         4006.5406509089803,
-        3897.912853463262
+        3897.720570008539,
+        3899.2218459222695
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-10-30T22:41:06.470Z",
+      "asOf": "2026-10-31T01:52:48.435Z",
       "extra": {
         "usdCny": 6.65975956,
-        "cnyPerGramApprox": 834.64
+        "cnyPerGramApprox": 834.89
       }
     }
   ],
@@ -345,8 +345,8 @@
     },
     {
       "kind": "gpu",
-      "title": "RTX 5090 cloud rental · RunPod",
-      "price": 0.69,
+      "title": "RTX 5080 cloud rental · RunPod",
+      "price": 0.39,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -354,15 +354,15 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 32,
-        "watchModel": "RTX5090"
+        "vram": 16,
+        "watchModel": "RTX5080"
       },
-      "asOf": "2026-10-30T22:41:06.804Z"
+      "asOf": "2026-10-31T01:52:48.933Z"
     },
     {
       "kind": "gpu",
-      "title": "H100 NVL cloud rental · RunPod",
-      "price": 2.59,
+      "title": "RTX 4090 cloud rental · RunPod",
+      "price": 0.34,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -370,10 +370,42 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 94,
+        "vram": 24,
+        "watchModel": "RTX4090"
+      },
+      "asOf": "2026-10-31T01:52:48.933Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "H100 SXM cloud rental · RunPod",
+      "price": 2.69,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-10-30T22:41:06.804Z"
+      "asOf": "2026-10-31T01:52:48.933Z"
+    },
+    {
+      "kind": "gpu",
+      "title": "B200 cloud rental · RunPod",
+      "price": 5.98,
+      "currency": "USD",
+      "unit": "GPU-hour",
+      "inStock": true,
+      "vendor": "RunPod",
+      "source": "runpod:graphql",
+      "url": "https://www.runpod.io/gpu-instance/pricing",
+      "extra": {
+        "vram": 180,
+        "watchModel": "B200"
+      },
+      "asOf": "2026-10-31T01:52:48.934Z"
     },
     {
       "kind": "gpu",
@@ -389,7 +421,7 @@
         "vram": 80,
         "watchModel": "A100"
       },
-      "asOf": "2026-10-30T22:41:06.804Z"
+      "asOf": "2026-10-31T01:52:48.934Z"
     },
     {
       "kind": "gpu",
@@ -405,7 +437,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-10-30T22:41:06.804Z"
+      "asOf": "2026-10-31T01:52:48.934Z"
     },
     {
       "kind": "gpu",
@@ -420,7 +452,7 @@
         "sku": "NVGFT590"
       },
       "note": "Founders Edition / partner catalog.",
-      "asOf": "2026-10-30T22:41:08.819Z"
+      "asOf": "2026-10-31T01:52:50.610Z"
     },
     {
       "kind": "gpu",
@@ -435,7 +467,7 @@
         "sku": "NVGFT580"
       },
       "note": "Founders Edition / partner catalog.",
-      "asOf": "2026-10-30T22:41:08.819Z"
+      "asOf": "2026-10-31T01:52:50.610Z"
     },
     {
       "kind": "gpu",
@@ -450,7 +482,7 @@
         "sku": "NVGFT570"
       },
       "note": "Founders Edition / partner catalog.",
-      "asOf": "2026-10-30T22:41:08.819Z"
+      "asOf": "2026-10-31T01:52:50.610Z"
     },
     {
       "kind": "gpu",
@@ -492,8 +524,8 @@
     },
     {
       "kind": "gpu",
-      "title": "RTX 5080 cloud rental · RunPod",
-      "price": 0.39,
+      "title": "RTX 5090 cloud rental · RunPod",
+      "price": 0.69,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -501,42 +533,8 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 16,
-        "watchModel": "RTX5080",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "RTX 4090 cloud rental · RunPod",
-      "price": 0.34,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 24,
-        "watchModel": "RTX4090",
-        "fromSnapshot": true
-      },
-      "asOf": "2026-09-13T10:55:05.227Z"
-    },
-    {
-      "kind": "gpu",
-      "title": "B200 cloud rental · RunPod",
-      "price": 5.98,
-      "currency": "USD",
-      "unit": "GPU-hour",
-      "inStock": true,
-      "vendor": "RunPod",
-      "source": "runpod:graphql",
-      "url": "https://www.runpod.io/gpu-instance/pricing",
-      "extra": {
-        "vram": 180,
-        "watchModel": "B200",
+        "vram": 32,
+        "watchModel": "RTX5090",
         "fromSnapshot": true
       },
       "asOf": "2026-09-13T10:55:05.227Z"
@@ -556,7 +554,7 @@
       "extra": {
         "sku": "FU9E3LL/A"
       },
-      "asOf": "2026-10-30T22:41:06.668Z"
+      "asOf": "2026-10-31T01:52:48.744Z"
     },
     {
       "kind": "macmini",
@@ -568,7 +566,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-10-30T22:41:06.668Z"
+      "asOf": "2026-10-31T01:52:48.744Z"
     },
     {
       "kind": "macmini",
@@ -580,7 +578,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-10-30T22:41:06.668Z"
+      "asOf": "2026-10-31T01:52:48.744Z"
     },
     {
       "kind": "macmini",
