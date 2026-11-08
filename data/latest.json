@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-08T18:31:42.873Z",
+  "asOf": "2026-11-08T22:31:43.882Z",
   "gold": [
     {
       "kind": "gold",
@@ -50,7 +50,7 @@
       "vendor": "gold-api.com",
       "source": "gold-api.com:XAU",
       "url": "https://gold-api.com",
-      "asOf": "2026-11-08T18:31:23Z",
+      "asOf": "2026-11-08T22:31:23Z",
       "spark": [
         4157,
         4216.2998046875,
@@ -123,10 +123,10 @@
     {
       "kind": "gold",
       "title": "PAXG (tokenized gold)",
-      "price": 4050.94,
+      "price": 4036.64,
       "currency": "USD",
       "unit": "oz",
-      "changePct": -0.2643417402726293,
+      "changePct": -0.6040286897731484,
       "vendor": "CoinGecko",
       "source": "coingecko:pax-gold",
       "url": "https://www.coingecko.com/en/coins/pax-gold",
@@ -161,13 +161,13 @@
         4078.1457069201642,
         4057.8685880193907,
         4059.9782360469267,
-        4051.194810247978
+        4036.6257198489443
       ],
       "note": "On-chain gold proxy, not COMEX.",
-      "asOf": "2026-11-08T18:31:42.523Z",
+      "asOf": "2026-11-08T22:31:43.570Z",
       "extra": {
         "usdCny": 6.6755,
-        "cnyPerGramApprox": 869.42
+        "cnyPerGramApprox": 866.35
       }
     }
   ],
@@ -354,7 +354,7 @@
         "vram": 32,
         "watchModel": "RTX5090"
       },
-      "asOf": "2026-11-08T18:31:42.872Z"
+      "asOf": "2026-11-08T22:31:43.801Z"
     },
     {
       "kind": "gpu",
@@ -370,12 +370,12 @@
         "vram": 24,
         "watchModel": "RTX4090"
       },
-      "asOf": "2026-11-08T18:31:42.872Z"
+      "asOf": "2026-11-08T22:31:43.801Z"
     },
     {
       "kind": "gpu",
-      "title": "H100 NVL cloud rental · RunPod",
-      "price": 2.59,
+      "title": "H100 SXM cloud rental · RunPod",
+      "price": 2.69,
       "currency": "USD",
       "unit": "GPU-hour",
       "inStock": true,
@@ -383,10 +383,10 @@
       "source": "runpod:graphql",
       "url": "https://www.runpod.io/gpu-instance/pricing",
       "extra": {
-        "vram": 94,
+        "vram": 80,
         "watchModel": "H100"
       },
-      "asOf": "2026-11-08T18:31:42.872Z"
+      "asOf": "2026-11-08T22:31:43.801Z"
     },
     {
       "kind": "gpu",
@@ -402,7 +402,7 @@
         "vram": 180,
         "watchModel": "B200"
       },
-      "asOf": "2026-11-08T18:31:42.872Z"
+      "asOf": "2026-11-08T22:31:43.801Z"
     },
     {
       "kind": "gpu",
@@ -418,7 +418,7 @@
         "vram": 40,
         "watchModel": "A100"
       },
-      "asOf": "2026-11-08T18:31:42.872Z"
+      "asOf": "2026-11-08T22:31:43.801Z"
     },
     {
       "kind": "gpu",
@@ -434,7 +434,7 @@
         "vram": 48,
         "watchModel": "RTX6000"
       },
-      "asOf": "2026-11-08T18:31:42.872Z"
+      "asOf": "2026-11-08T22:31:43.801Z"
     },
     {
       "kind": "gpu",
@@ -449,7 +449,7 @@
         "sku": "NVGFT580"
       },
       "note": "Founders Edition / partner catalog.",
-      "asOf": "2026-11-08T18:31:42.828Z"
+      "asOf": "2026-11-08T22:31:43.882Z"
     },
     {
       "kind": "gpu",
@@ -464,7 +464,7 @@
         "sku": "NVGFT590"
       },
       "note": "Founders Edition / partner catalog.",
-      "asOf": "2026-11-08T18:31:42.828Z"
+      "asOf": "2026-11-08T22:31:43.882Z"
     },
     {
       "kind": "gpu",
@@ -479,7 +479,7 @@
         "sku": "NVGFT570"
       },
       "note": "Founders Edition / partner catalog.",
-      "asOf": "2026-11-08T18:31:42.828Z"
+      "asOf": "2026-11-08T22:31:43.882Z"
     },
     {
       "kind": "gpu",
@@ -540,21 +540,6 @@
   "macmini": [
     {
       "kind": "macmini",
-      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet ",
-      "price": "849.00",
-      "currency": "USD",
-      "unit": "unit",
-      "inStock": true,
-      "vendor": "Apple Certified Refurbished",
-      "source": "apple:bootstrap",
-      "url": "https://www.apple.com/shop/refurbished/mac/mac-mini",
-      "extra": {
-        "sku": "FU9E3LL/A"
-      },
-      "asOf": "2026-11-08T18:31:42.579Z"
-    },
-    {
-      "kind": "macmini",
       "title": "Refurbished Mac mini Apple M4 Pro Chip with 12-Core CPU and 16-Core GPU, Gigabit Ethernet ",
       "price": "1609.00",
       "currency": "USD",
@@ -566,7 +551,7 @@
       "extra": {
         "sku": "G1KZALL/A"
       },
-      "asOf": "2026-11-08T18:31:42.579Z"
+      "asOf": "2026-11-08T22:31:43.536Z"
     },
     {
       "kind": "macmini",
@@ -581,7 +566,7 @@
       "extra": {
         "sku": "G1KZDLL/A"
       },
-      "asOf": "2026-11-08T18:31:42.579Z"
+      "asOf": "2026-11-08T22:31:43.536Z"
     },
     {
       "kind": "macmini",
@@ -596,7 +581,7 @@
       "extra": {
         "sku": "G1JVJLL/A"
       },
-      "asOf": "2026-11-08T18:31:42.579Z"
+      "asOf": "2026-11-08T22:31:43.536Z"
     },
     {
       "kind": "macmini",
@@ -611,7 +596,7 @@
       "extra": {
         "sku": "G1JVKLL/A"
       },
-      "asOf": "2026-11-08T18:31:42.579Z"
+      "asOf": "2026-11-08T22:31:43.536Z"
     },
     {
       "kind": "macmini",
@@ -623,7 +608,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "US list as of Apple's 2024 M4 refresh; confirm on buy page.",
-      "asOf": "2026-11-08T18:31:42.637Z"
+      "asOf": "2026-11-08T22:31:43.598Z"
     },
     {
       "kind": "macmini",
@@ -635,7 +620,7 @@
       "source": "static:msrp",
       "url": "https://www.apple.com/shop/buy-mac/mac-mini",
       "note": "Typical US starting config; confirm on buy page.",
-      "asOf": "2026-11-08T18:31:42.637Z"
+      "asOf": "2026-11-08T22:31:43.598Z"
     },
     {
       "kind": "macmini",
